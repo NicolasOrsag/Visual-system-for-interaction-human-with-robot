@@ -2,5 +2,9 @@
 
 13.3.22 - consultation with my supervisor about goals of this semester 
 
-16.4.22 - create github repository - add notes from consultations, sources, diary, plan what to start with, create template of text of thesis
+16.4.22 - create github repository - add notes from consultations, sources, diary
+	- plan what to start with 
+	- create template of text of thesis
+
+17.4.22 - clean thesis template, add first resource
 
