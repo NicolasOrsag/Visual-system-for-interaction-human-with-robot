@@ -7,4 +7,5 @@
 	- create template of text of thesis
 
 17.4.22 - clean thesis template, add first resource
+	- install YARP, OpenCV, CUDA
 
