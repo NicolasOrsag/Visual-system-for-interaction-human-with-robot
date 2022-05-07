@@ -9,3 +9,7 @@
 17.4.22 - clean thesis template, add first resource
 	- install YARP, OpenCV, CUDA
 
+2.5.22  - write notes from main source 
+	- install matlab
+
+7.5.22  - finish all installation steps of online-detection-demo
