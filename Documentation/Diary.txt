@@ -13,3 +13,5 @@
 	- install matlab
 
 7.5.22  - finish all installation steps of online-detection-demo
+
+11.5.22 - create presentation of progress, read - Interactive Data Collection for Deep Learning Object Detectors on Humanoid Robots
