@@ -1,0 +1,35 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{WHD{\etalchar{+}}20}
+
+\bibitem[EM21]{WSODLTHRI2021}
+Lorenzo~Natale Elisa~Maiettini, Vadim~Tikhanoff.
+\newblock Weakly-supervised object detection learning through human-robot
+  interaction.
+\newblock {\em IEEE}, (1):8, 2021.
+
+\bibitem[FAL17]{finn2017model}
+Chelsea Finn, Pieter Abbeel, and Sergey Levine.
+\newblock Model-agnostic meta-learning for fast adaptation of deep networks.
+\newblock In {\em International conference on machine learning}, pages
+  1126--1135. PMLR, 2017.
+
+\bibitem[HHM{\etalchar{+}}22]{han2022meta}
+Guangxing Han, Shiyuan Huang, Jiawei Ma, Yicheng He, and Shih-Fu Chang.
+\newblock Meta faster r-cnn: Towards accurate few-shot object detection with
+  attentive feature alignment.
+\newblock In {\em Proceedings of the AAAI Conference on Artificial
+  Intelligence}, volume~36, pages 780--789, 2022.
+
+\bibitem[VJ01]{viola2001rapid}
+Paul Viola and Michael Jones.
+\newblock Rapid object detection using a boosted cascade of simple features.
+\newblock In {\em Proceedings of the 2001 IEEE computer society conference on
+  computer vision and pattern recognition. CVPR 2001}, volume~1, pages I--I.
+  Ieee, 2001.
+
+\bibitem[WHD{\etalchar{+}}20]{wang2020frustratingly}
+Xin Wang, Thomas~E Huang, Trevor Darrell, Joseph~E Gonzalez, and Fisher Yu.
+\newblock Frustratingly simple few-shot object detection.
+\newblock {\em arXiv preprint arXiv:2003.06957}, 2020.
+
+\end{thebibliography}

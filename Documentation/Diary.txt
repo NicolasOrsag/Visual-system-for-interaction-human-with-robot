@@ -15,3 +15,13 @@
 7.5.22  - finish all installation steps of online-detection-demo
 
 11.5.22 - create presentation of progress, read - Interactive Data Collection for Deep Learning Object Detectors on Humanoid Robots
+
+30.9.22 - consultation with supervisor
+
+october - research about few/shot object detection 
+
+november - read articles about FSOD algorithms 
+
+december - try algorithms I read about, do some experiments
+
+january - write about 20 pages of thesis, create presentation 
