@@ -2,16 +2,20 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Ukážka detekcie jednoduchých príznakov vo Viola Jones\relax }}{7}{figure.caption.8}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Ukážka konvolučnej vrstvy\relax }}{9}{figure.caption.11}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Ukážka príkladu CNN\relax }}{11}{figure.caption.15}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Úkážka jedného neurónu\relax }}{7}{figure.caption.9}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Vzorec pre neurón\relax }}{8}{figure.caption.10}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Aplikácia filtra\relax }}{9}{figure.caption.13}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Znázornenie paddingu pri konvolúcii\relax }}{10}{figure.caption.14}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Aplikácia dropoutu\relax }}{12}{figure.caption.18}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Gradientový zostup\relax }}{14}{figure.caption.20}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Model pre frustrantingly simple few shot object detector\relax }}{18}{figure.caption.25}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Stratová funkcia FSFSODT\relax }}{19}{figure.caption.26}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Faster R-CNN\relax }}{20}{figure.caption.28}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Výstup pri fine-tuningu pomocou Meta Faster-RCNN\relax }}{20}{figure.caption.20}%
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Model pre frustrantingly simple few shot object detector\relax }}{21}{figure.caption.21}%
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Stratová funkcia FSFSODT\relax }}{21}{figure.caption.22}%
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Tréningové parametre pri fine-tuningu\relax }}{23}{figure.caption.25}%
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Výsledky tréningu\relax }}{24}{figure.caption.27}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Výstup pri fine-tuningu pomocou Meta Faster-RCNN\relax }}{25}{figure.caption.29}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Tréningové parametre pri fine-tuningu\relax }}{27}{figure.caption.32}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Výsledky tréningu\relax }}{28}{figure.caption.34}%
 \addvspace {10\p@ }

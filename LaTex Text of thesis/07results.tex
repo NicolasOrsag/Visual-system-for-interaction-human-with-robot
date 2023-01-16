@@ -16,41 +16,13 @@ Autori trénovali model na 4 20GB GPU. A ja som dostal nasledovný výstup aj po
 \label{fig:image}
 \end{figure}
 
-
-
 Avšak Frustrantingly simple few-shot object detection prístup sa mi podarilo vyskúšať a otestovať, a po prispôsobení trénovacích parametrov k mojej obmedzenej pamäťovej kapacite som bol schopný spustiť všetky fázy tréningu. 
 
-\section{Frustrantingly simple few-shot object detection}
-Pri few-shot object detection, potrebujeme mať dataset rozdelený na triedy ku ktorým máme veľké množstvo anotovaných dát(base classes), a na triedy ku ktorým máme malé množstvo anotovaných dát(novel classes).
-
-Ako vidíme na obrázku model sa delí na dve časti: feature extractor(v pravej časti obrázku označený modrou farbou) a box predictor(v pravej časti obrázku označený žltou farbou). 
-
-\begin{figure}[!hbt]
-\includegraphics[width=\textwidth]{images/FSFSOD_model.png}
-\caption{Model pre frustrantingly simple few shot object detector}
-\label{fig:image}
-\end{figure}
-
-Tréning tohto modelu sa delí na 2 etapy: 
-
-V prvej etape sa vykoná base tréning na base clases na to sa využíva Fster-R-CNN, natrénuje sa feature extractor aj box predictor pomocou stratovej funkcie: 
-
-\begin{figure}[!hbt]
-\includegraphics[width=\textwidth]{images/FSFSOD_loss.png}
-\caption{Stratová funkcia FSFSODT}
-\label{fig:image}
-\end{figure}
-
-kde Lrpn sa aplikuje na výstup z RPN na rozlíšenie popredia od pozadia, Lcls je cross-entropy loss pre box classifier a Lloc je stratová funkcia pre box regressor. Box regressor predikuje poziciu bounding boxu, box classifier klasifikuje objekt do tried.
-
-V druhej etape(few-shot fine-tuning) vytvoríme pre každú z tried(novel aj base) malý tréningový set. Pre novel classes priradíme náhodné inicializované váhy do siete pre box predictor. A následne robíme finetuning ale len na poslednej vrstve nášho modelu, celý feature extraktor ostáva zachovaný a trénujeme len box calssifier a box regressor. Použijeme rovnakú loss funkciu a 20x
-nižší learning rate.
-
-Kľučovým prvkom tejto metódy je oddelenie učenia sa reprezentácii príznakov a učenia sa
-predikovania boxov. Keďže príznaky, ktoré sme sa naučili používať na base classes môžme využiť
-pre novell classes.
+\section{Testovanie Frustrantingly simple few-shot object detection}
 
 \subsubsection{Dataset:}
+Pri few-shot object detection, potrebujeme mať dataset rozdelený na triedy ku ktorým máme veľké množstvo anotovaných dát(base classes), a na triedy ku ktorým máme malé množstvo anotovaných dát(novel classes).
+
 Ako dataset som použil pascal voc, ako base classes som použil triedy:
 aeroplane, bicycle, boat, bottle, car, cat, chair, diningtable, dog, horse, person, pottedplant, sheep,
 train, tvmonitor.

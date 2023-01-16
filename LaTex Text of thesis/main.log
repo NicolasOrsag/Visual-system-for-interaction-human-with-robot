@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.12.7)  13 JAN 2023 14:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.12.7)  16 JAN 2023 13:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -451,6 +451,18 @@ LaTeX Warning: Label `fig:image' multiply defined.
 
 LaTeX Warning: Label `fig:image' multiply defined.
 
+
+LaTeX Warning: Label `fig:image' multiply defined.
+
+
+LaTeX Warning: Label `fig:image' multiply defined.
+
+
+LaTeX Warning: Label `fig:image' multiply defined.
+
+
+LaTeX Warning: Label `fig:image' multiply defined.
+
 )
 \openout1 = `main.aux'.
 
@@ -590,138 +602,180 @@ Kapitola 2.
 Kapitola 3.
 [3
 
-] [4] [5]
-<images/viola_jones.jpg, id=174, 463.7325pt x 307.1475pt>
-File: images/viola_jones.jpg Graphic file (type jpg)
-<use images/viola_jones.jpg>
-Package pdftex.def Info: images/viola_jones.jpg  used on input line 42.
-(pdftex.def)             Requested size: 463.73135pt x 307.14674pt.
+] [4] [5] [6]
+<images/neuron.png, id=185, 429.605pt x 294.09875pt>
+File: images/neuron.png Graphic file (type png)
+<use images/neuron.png>
+Package pdftex.def Info: images/neuron.png  used on input line 42.
+(pdftex.def)             Requested size: 390.0pt x 266.98854pt.
+<images/neuron_vzorec.png, id=186, 268.00125pt x 199.74625pt>
+File: images/neuron_vzorec.png Graphic file (type png)
+<use images/neuron_vzorec.png>
+Package pdftex.def Info: images/neuron_vzorec.png  used on input line 49.
+(pdftex.def)             Requested size: 390.0pt x 290.67311pt.
+ [7 <./images/neuron.png (PNG copy)>] [8 <./images/neuron_vzorec.png>]
+<images/filter.png, id=203, 4553.01pt x 1707.37875pt>
+File: images/filter.png Graphic file (type png)
+<use images/filter.png>
+Package pdftex.def Info: images/filter.png  used on input line 69.
+(pdftex.def)             Requested size: 390.0pt x 146.2325pt.
+ [9 <./images/filter.png>]
+<images/padding.png, id=211, 298.86656pt x 259.7203pt>
+File: images/padding.png Graphic file (type png)
+<use images/padding.png>
+Package pdftex.def Info: images/padding.png  used on input line 84.
+(pdftex.def)             Requested size: 390.0pt x 338.94019pt.
+ [10 <./images/padding.png>] [11]
+<images/dropout.png, id=225, 620.3175pt x 337.26pt>
+File: images/dropout.png Graphic file (type png)
+<use images/dropout.png>
+Package pdftex.def Info: images/dropout.png  used on input line 108.
+(pdftex.def)             Requested size: 390.0pt x 212.03749pt.
+ [12 <./images/dropout.png>] [13]
 
-Overfull \hbox (73.73135pt too wide) in paragraph at lines 42--43
-[][] 
+Package natbib Warning: Citation `Adam' on page 14 undefined on input line 135.
+
+
+
+Overfull \hbox (2.0536pt too wide) in paragraph at lines 137--138
+[]\T1/cmr/m/n/12 Gradient Des-cent(Gradientový zo-stup) pris-pô-so-buje pa-ra-m
+etre na-²ej siete
  []
 
-[6] [7 <./images/viola_jones.jpg>]
-<images/CNN-layer.resized.png, id=185, 321.2pt x 186.6975pt>
-File: images/CNN-layer.resized.png Graphic file (type png)
-<use images/CNN-layer.resized.png>
-Package pdftex.def Info: images/CNN-layer.resized.png  used on input line 62.
-(pdftex.def)             Requested size: 321.19922pt x 186.69704pt.
- [8] [9 <./images/CNN-layer.resized.png>]
-<images/CNN.resized.JPG, id=200, 481.8pt x 240.14719pt>
-File: images/CNN.resized.JPG Graphic file (type jpg)
-<use images/CNN.resized.JPG>
-Package pdftex.def Info: images/CNN.resized.JPG  used on input line 83.
-(pdftex.def)             Requested size: 481.79881pt x 240.14658pt.
+<images/GD.png, id=237, 531.9875pt x 299.1175pt>
+File: images/GD.png Graphic file (type png)
+<use images/GD.png>
+Package pdftex.def Info: images/GD.png  used on input line 140.
+(pdftex.def)             Requested size: 390.0pt x 219.2896pt.
+[14 <./images/GD.png (PNG copy)>] [15] [16]
 
-Overfull \hbox (91.79881pt too wide) in paragraph at lines 83--84
-[][] 
- []
+Package natbib Warning: Citation `COCO' on page 17 undefined on input line 176.
 
-[10] [11 <./images/CNN.resized.JPG>] [12] [13] [14])
-(./04previous_solutions.tex [15]
+
+
+Package natbib Warning: Citation `VOC' on page 17 undefined on input line 176.
+
+[17]
+
+Package natbib Warning: Citation `FSFSODT' on page 18 undefined on input line 1
+87.
+
+<images/FSFSOD_model.png, id=261, 1321.93875pt x 316.18124pt>
+File: images/FSFSOD_model.png Graphic file (type png)
+<use images/FSFSOD_model.png>
+Package pdftex.def Info: images/FSFSOD_model.png  used on input line 192.
+(pdftex.def)             Requested size: 390.0pt x 93.27748pt.
+
+Package natbib Warning: Citation `Faster' on page 18 undefined on input line 19
+7.
+
+<images/FSFSOD_loss.png, id=262, 269.005pt x 45.16875pt>
+File: images/FSFSOD_loss.png Graphic file (type png)
+<use images/FSFSOD_loss.png>
+Package pdftex.def Info: images/FSFSOD_loss.png  used on input line 200.
+(pdftex.def)             Requested size: 390.0pt x 65.48608pt.
+[18 <./images/FSFSOD_model.png>]
+<images/Faster.png, id=270, 1818.795pt x 776.9025pt>
+File: images/Faster.png Graphic file (type png)
+<use images/Faster.png>
+Package pdftex.def Info: images/Faster.png  used on input line 219.
+(pdftex.def)             Requested size: 390.0pt x 166.5803pt.
+) (./04previous_solutions.tex [19 <./images/FSFSOD_loss.png>] [20 <./images/Fas
+ter.png>]
 Kapitola 4.
-) (./05proposal.tex [16
+) (./05proposal.tex [21
 
 ]
 Kapitola 5.
-) (./06implementation.tex [17
+) (./06implementation.tex [22
 
 ]
 Kapitola 6.
-) (./07results.tex [18
+) (./07results.tex [23
 
 ]
 Kapitola 7.
-[19
+[24
 
 ]
-<images/no_memory.png, id=257, 304.13625pt x 275.0275pt>
+<images/no_memory.png, id=306, 304.13625pt x 275.0275pt>
 File: images/no_memory.png Graphic file (type png)
 <use images/no_memory.png>
 Package pdftex.def Info: images/no_memory.png  used on input line 13.
 (pdftex.def)             Requested size: 304.1355pt x 275.02682pt.
- [20 <./images/no_memory.png>]
-<images/FSFSOD_model.png, id=264, 1321.93875pt x 316.18124pt>
-File: images/FSFSOD_model.png Graphic file (type png)
-<use images/FSFSOD_model.png>
-Package pdftex.def Info: images/FSFSOD_model.png  used on input line 29.
-(pdftex.def)             Requested size: 390.0pt x 93.27748pt.
-<images/FSFSOD_loss.png, id=265, 269.005pt x 45.16875pt>
-File: images/FSFSOD_loss.png Graphic file (type png)
-<use images/FSFSOD_loss.png>
-Package pdftex.def Info: images/FSFSOD_loss.png  used on input line 39.
-(pdftex.def)             Requested size: 390.0pt x 65.48608pt.
- [21 <./images/FSFSOD_model.png> <./images/FSFSOD_loss.png>]
-<images/Training_parameters.png, id=274, 828.09375pt x 632.3625pt>
+ [25 <./images/no_memory.png>]
+<images/Training_parameters.png, id=313, 828.09375pt x 632.3625pt>
 File: images/Training_parameters.png Graphic file (type png)
 <use images/Training_parameters.png>
-Package pdftex.def Info: images/Training_parameters.png  used on input line 73.
+Package pdftex.def Info: images/Training_parameters.png  used on input line 45.
 
 (pdftex.def)             Requested size: 390.0pt x 297.82796pt.
-<images/eval1.png, id=275, 731.73375pt x 94.3525pt>
+<images/eval1.png, id=314, 731.73375pt x 94.3525pt>
 File: images/eval1.png Graphic file (type png)
 <use images/eval1.png>
-Package pdftex.def Info: images/eval1.png  used on input line 81.
+Package pdftex.def Info: images/eval1.png  used on input line 53.
 (pdftex.def)             Requested size: 390.0pt x 50.28876pt.
-<images/eval2.png, id=276, 720.6925pt x 95.35625pt>
+<images/eval2.png, id=315, 720.6925pt x 95.35625pt>
 File: images/eval2.png Graphic file (type png)
 <use images/eval2.png>
-Package pdftex.def Info: images/eval2.png  used on input line 82.
+Package pdftex.def Info: images/eval2.png  used on input line 54.
 (pdftex.def)             Requested size: 390.0pt x 51.60072pt.
-<images/eval3.png, id=277, 419.5675pt x 95.35625pt>
+<images/eval3.png, id=316, 419.5675pt x 95.35625pt>
 File: images/eval3.png Graphic file (type png)
 <use images/eval3.png>
-Package pdftex.def Info: images/eval3.png  used on input line 83.
+Package pdftex.def Info: images/eval3.png  used on input line 55.
 (pdftex.def)             Requested size: 390.0pt x 88.63672pt.
-<images/eval4.png, id=278, 701.62125pt x 101.37875pt>
+<images/eval4.png, id=317, 701.62125pt x 101.37875pt>
 File: images/eval4.png Graphic file (type png)
 <use images/eval4.png>
-Package pdftex.def Info: images/eval4.png  used on input line 84.
+Package pdftex.def Info: images/eval4.png  used on input line 56.
 (pdftex.def)             Requested size: 390.0pt x 56.3525pt.
- [22]) (./08conclusion.tex [23 <./images/Training_parameters.png>] [24 <./image
+ [26]) (./08conclusion.tex [27 <./images/Training_parameters.png>] [28 <./image
 s/eval1.png> <./images/eval2.png> <./images/eval3.png> <./images/eval4.png>]
 Kapitola 8.
-) [25
+) [29
 
-] (./main.bbl [26
+] (./main.bbl [30
 
 
-]) [27] (./main.lof)
+]) [31] (./main.lof)
 \tf@lof=\write5
 \openout5 = `main.lof'.
 
- [28
+
+
+Package natbib Warning: There were undefined citations.
+
+[32
 
 ] (./main.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 274C7DA67425DA55EDFA63027DE10AA3;2744.
+(rerunfilecheck)             Checksum: A70594BF88FAC5E006BE47B4816F5CD6;2782.
  ) 
 Here is how much of TeX's memory you used:
- 14636 strings out of 478287
- 231575 string characters out of 5849289
- 524536 words of memory out of 5000000
- 32490 multiletter control sequences out of 15000+600000
- 481920 words of font info for 57 fonts, out of 8000000 for 9000
+ 14690 strings out of 478287
+ 232338 string characters out of 5849289
+ 524636 words of memory out of 5000000
+ 32526 multiletter control sequences out of 15000+600000
+ 481583 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,7n,76p,1267b,454s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,7n,76p,1269b,456s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/nicolas/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1200.6
-00pk> </home/nicolas/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm120
-0.600pk> </home/nicolas/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx
-1440.600pk> </home/nicolas/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/e
-csl1200.600pk> </home/nicolas/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/e
-c/ecbx2488.600pk> </home/nicolas/.texlive2021/texmf-var/fonts/pk/ljfour/jknappe
-n/ec/ecrm1200.600pk> </home/nicolas/.texlive2021/texmf-var/fonts/pk/ljfour/jkna
-ppen/ec/ecbx1728.600pk> </home/nicolas/.texlive2021/texmf-var/fonts/pk/ljfour/j
-knappen/ec/ecbx1200.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr8.pfb>
-Output written on main.pdf (37 pages, 1539696 bytes).
+00pk> </home/nicolas/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx144
+0.600pk> </home/nicolas/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecsl
+1200.600pk> </home/nicolas/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/e
+cbx2488.600pk> </home/nicolas/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/e
+c/ecrm1200.600pk> </home/nicolas/.texlive2021/texmf-var/fonts/pk/ljfour/jknappe
+n/ec/ecbx1728.600pk> </home/nicolas/.texlive2021/texmf-var/fonts/pk/ljfour/jkna
+ppen/ec/ecbx1200.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr8.pfb>
+Output written on main.pdf (41 pages, 2583431 bytes).
 PDF statistics:
- 749 PDF objects out of 1000 (max. 8388607)
- 317 compressed objects within 4 object streams
- 90 named destinations out of 1000 (max. 500000)
- 215 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 803 PDF objects out of 1000 (max. 8388607)
+ 348 compressed objects within 4 object streams
+ 106 named destinations out of 1000 (max. 500000)
+ 235 words of extra memory for PDF output out of 10000 (max. 10000000)
 

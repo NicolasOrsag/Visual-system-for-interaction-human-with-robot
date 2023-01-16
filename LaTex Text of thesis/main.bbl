@@ -1,6 +1,17 @@
 \newcommand{\etalchar}[1]{$^{#1}$}
 \begin{thebibliography}{WHD{\etalchar{+}}20}
 
+\bibitem[CV95]{SVM}
+Corinna Cortes and Vladimir Vapnik.
+\newblock Support-vector networks.
+\newblock {\em Machine learning}, 20(3):273--297, 1995.
+
+\bibitem[DT05]{HOG}
+Navneet Dalal and Bill Triggs.
+\newblock Histograms of oriented gradients for human detection.
+\newblock In {\em 2005 IEEE computer society conference on computer vision and
+  pattern recognition (CVPR'05)}, volume~1, pages 886--893. Ieee, 2005.
+
 \bibitem[EM21]{WSODLTHRI2021}
 Lorenzo~Natale Elisa~Maiettini, Vadim~Tikhanoff.
 \newblock Weakly-supervised object detection learning through human-robot
@@ -19,6 +30,23 @@ Guangxing Han, Shiyuan Huang, Jiawei Ma, Yicheng He, and Shih-Fu Chang.
   attentive feature alignment.
 \newblock In {\em Proceedings of the AAAI Conference on Artificial
   Intelligence}, volume~36, pages 780--789, 2022.
+
+\bibitem[LB{\etalchar{+}}95]{CNN}
+Yann LeCun, Yoshua Bengio, et~al.
+\newblock Convolutional networks for images, speech, and time series.
+\newblock {\em The handbook of brain theory and neural networks},
+  3361(10):1995, 1995.
+
+\bibitem[Low99]{SIFT}
+David~G Lowe.
+\newblock Object recognition from local scale-invariant features.
+\newblock In {\em Proceedings of the seventh IEEE international conference on
+  computer vision}, volume~2, pages 1150--1157. Ieee, 1999.
+
+\bibitem[Sch13]{Adaboost}
+Robert~E Schapire.
+\newblock Explaining adaboost.
+\newblock In {\em Empirical inference}, pages 37--52. Springer, 2013.
 
 \bibitem[VJ01]{viola2001rapid}
 Paul Viola and Michael Jones.
