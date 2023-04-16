@@ -1,63 +1,97 @@
-\newcommand{\etalchar}[1]{$^{#1}$}
-\begin{thebibliography}{WHD{\etalchar{+}}20}
+\begin{thebibliography}{10}
 
-\bibitem[CV95]{SVM}
-Corinna Cortes and Vladimir Vapnik.
-\newblock Support-vector networks.
-\newblock {\em Machine learning}, 20(3):273--297, 1995.
-
-\bibitem[DT05]{HOG}
-Navneet Dalal and Bill Triggs.
-\newblock Histograms of oriented gradients for human detection.
-\newblock In {\em 2005 IEEE computer society conference on computer vision and
-  pattern recognition (CVPR'05)}, volume~1, pages 886--893. Ieee, 2005.
-
-\bibitem[EM21]{WSODLTHRI2021}
-Lorenzo~Natale Elisa~Maiettini, Vadim~Tikhanoff.
-\newblock Weakly-supervised object detection learning through human-robot
-  interaction.
-\newblock {\em IEEE}, (1):8, 2021.
-
-\bibitem[FAL17]{finn2017model}
-Chelsea Finn, Pieter Abbeel, and Sergey Levine.
-\newblock Model-agnostic meta-learning for fast adaptation of deep networks.
-\newblock In {\em International conference on machine learning}, pages
-  1126--1135. PMLR, 2017.
-
-\bibitem[HHM{\etalchar{+}}22]{han2022meta}
-Guangxing Han, Shiyuan Huang, Jiawei Ma, Yicheng He, and Shih-Fu Chang.
-\newblock Meta faster r-cnn: Towards accurate few-shot object detection with
-  attentive feature alignment.
-\newblock In {\em Proceedings of the AAAI Conference on Artificial
-  Intelligence}, volume~36, pages 780--789, 2022.
-
-\bibitem[LB{\etalchar{+}}95]{CNN}
-Yann LeCun, Yoshua Bengio, et~al.
-\newblock Convolutional networks for images, speech, and time series.
-\newblock {\em The handbook of brain theory and neural networks},
-  3361(10):1995, 1995.
-
-\bibitem[Low99]{SIFT}
+\bibitem{SIFT}
 David~G Lowe.
 \newblock Object recognition from local scale-invariant features.
 \newblock In {\em Proceedings of the seventh IEEE international conference on
   computer vision}, volume~2, pages 1150--1157. Ieee, 1999.
 
-\bibitem[Sch13]{Adaboost}
+\bibitem{HOG}
+Navneet Dalal and Bill Triggs.
+\newblock Histograms of oriented gradients for human detection.
+\newblock In {\em 2005 IEEE computer society conference on computer vision and
+  pattern recognition (CVPR'05)}, volume~1, pages 886--893. Ieee, 2005.
+
+\bibitem{SVM}
+Corinna Cortes and Vladimir Vapnik.
+\newblock Support-vector networks.
+\newblock {\em Machine learning}, 20(3):273--297, 1995.
+
+\bibitem{Adaboost}
 Robert~E Schapire.
 \newblock Explaining adaboost.
 \newblock In {\em Empirical inference}, pages 37--52. Springer, 2013.
 
-\bibitem[VJ01]{viola2001rapid}
+\bibitem{CNN}
+Yann LeCun, Yoshua Bengio, et~al.
+\newblock Convolutional networks for images, speech, and time series.
+\newblock {\em The handbook of brain theory and neural networks},
+  3361(10):1995, 1995.
+
+\bibitem{Adam}
+Diederik~P Kingma and Jimmy Ba.
+\newblock Adam: A method for stochastic optimization.
+\newblock {\em arXiv preprint arXiv:1412.6980}, 2014.
+
+\bibitem{Faster}
+Shaoqing Ren, Kaiming He, Ross Girshick, and Jian Sun.
+\newblock Faster r-cnn: Towards real-time object detection with region proposal
+  networks.
+\newblock {\em Advances in neural information processing systems}, 28, 2015.
+
+\bibitem{VGG}
+Karen Simonyan and Andrew Zisserman.
+\newblock Very deep convolutional networks for large-scale image recognition.
+\newblock {\em arXiv preprint arXiv:1409.1556}, 2014.
+
+\bibitem{ResNet}
+Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
+\newblock Deep residual learning for image recognition.
+\newblock In {\em Proceedings of the IEEE conference on computer vision and
+  pattern recognition (CVPR)}, pages 770--778, 2016.
+
+\bibitem{finn2017model}
+Chelsea Finn, Pieter Abbeel, and Sergey Levine.
+\newblock Model-agnostic meta-learning for fast adaptation of deep networks.
+\newblock In {\em International conference on machine learning}, pages
+  1126--1135. PMLR, 2017.
+
+\bibitem{COCO}
+Tsung-Yi Lin, Michael Maire, Serge Belongie, James Hays, Pietro Perona, Deva
+  Ramanan, Piotr Doll{\'a}r, and C~Lawrence Zitnick.
+\newblock Microsoft coco: Common objects in context.
+\newblock In {\em European conference on computer vision}, pages 740--755.
+  Springer, 2014.
+
+\bibitem{VOC}
+Mark Everingham, Luc Van~Gool, Christopher~KI Williams, John Winn, and Andrew
+  Zisserman.
+\newblock The pascal visual object classes (voc) challenge.
+\newblock {\em International journal of computer vision}, 88(2):303--338, 2010.
+
+\bibitem{FSFSODT}
+Xin Wang, Thomas~E Huang, Trevor Darrell, Joseph~E Gonzalez, and Fisher Yu.
+\newblock Frustratingly simple few-shot object detection.
+\newblock {\em arXiv preprint arXiv:2003.06957}, 2020.
+
+\bibitem{WSODLTHRI2021}
+Lorenzo~Natale Elisa~Maiettini, Vadim~Tikhanoff.
+\newblock Weakly-supervised object detection learning through human-robot
+  interaction.
+\newblock {\em IEEE}, (1):8, 2021.
+
+\bibitem{viola2001rapid}
 Paul Viola and Michael Jones.
 \newblock Rapid object detection using a boosted cascade of simple features.
 \newblock In {\em Proceedings of the 2001 IEEE computer society conference on
   computer vision and pattern recognition. CVPR 2001}, volume~1, pages I--I.
   Ieee, 2001.
 
-\bibitem[WHD{\etalchar{+}}20]{wang2020frustratingly}
-Xin Wang, Thomas~E Huang, Trevor Darrell, Joseph~E Gonzalez, and Fisher Yu.
-\newblock Frustratingly simple few-shot object detection.
-\newblock {\em arXiv preprint arXiv:2003.06957}, 2020.
+\bibitem{han2022meta}
+Guangxing Han, Shiyuan Huang, Jiawei Ma, Yicheng He, and Shih-Fu Chang.
+\newblock Meta faster r-cnn: Towards accurate few-shot object detection with
+  attentive feature alignment.
+\newblock In {\em Proceedings of the AAAI Conference on Artificial
+  Intelligence}, volume~36, pages 780--789, 2022.
 
 \end{thebibliography}

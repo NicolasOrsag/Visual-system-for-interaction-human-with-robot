@@ -7,28 +7,54 @@
 \contentsline {section}{\numberline {3.3}Objektová detekcia}{5}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Tradičé metódy}{5}{subsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.3.2}Metódy hlbokého učenia}{6}{subsection.3.3.2}%
-\contentsline {subsubsection}{Neurónové siete}{7}{section*.8}%
-\contentsline {subsubsection}{Úvod do CNN}{8}{section*.11}%
-\contentsline {subsubsection}{Konvolučné vrstvy}{9}{section*.12}%
-\contentsline {subsubsection}{Pooling}{11}{section*.15}%
-\contentsline {subsubsection}{Plne prepojené vrstvy}{11}{section*.16}%
-\contentsline {subsubsection}{Aktivačné funkcie a regularizácia}{11}{section*.17}%
-\contentsline {subsubsection}{Tréning CNN}{12}{section*.19}%
-\contentsline {section}{\numberline {3.4}Few-shot object detection(FSOD)}{15}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Prístupy k FSOD}{16}{subsection.3.4.1}%
-\contentsline {subsubsection}{Meta-learning}{16}{section*.21}%
-\contentsline {subsubsection}{Transfer learning}{16}{section*.22}%
-\contentsline {subsubsection}{Augmentácia dát}{17}{section*.23}%
-\contentsline {subsection}{\numberline {3.4.2}Datasety pre vyhodnotenie FSOD}{17}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Aktuálne riešenia FSOD}{17}{subsection.3.4.3}%
-\contentsline {subsubsection}{Frustrantingly simple few-shot object detection}{18}{section*.24}%
-\contentsline {subsubsection}{Faster R-CNN}{19}{section*.27}%
-\contentsline {chapter}{\numberline {4}Predchádzajúce riešenia}{21}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Návrh modelu}{22}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Implementácia}{23}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Výskum a výsledky}{24}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Testovanie Frustrantingly simple few-shot object detection}{26}{section.7.1}%
-\contentsline {subsubsection}{Dataset:}{26}{section*.30}%
-\contentsline {subsubsection}{Tréning:}{26}{section*.31}%
-\contentsline {subsubsection}{Vyhodnotenie:}{26}{section*.33}%
-\contentsline {chapter}{\numberline {8}Záver}{29}{chapter.8}%
+\contentsline {subsubsection}{Neurónové siete}{6}{section*.8}%
+\contentsline {subsubsection}{Úvod do CNN}{7}{section*.9}%
+\contentsline {subsubsection}{Konvolučné vrstvy}{8}{section*.10}%
+\contentsline {subsubsection}{Pooling}{10}{section*.13}%
+\contentsline {subsubsection}{Plne prepojené vrstvy}{10}{section*.14}%
+\contentsline {subsubsection}{Tréning CNN}{11}{section*.15}%
+\contentsline {subsubsection}{Aktivačné funkcie a regularizácia}{13}{section*.16}%
+\contentsline {subsubsection}{Benchmarkové metriky v objektovej detekcii}{14}{section*.18}%
+\contentsline {subsubsection}{Faster R-CNN}{16}{section*.20}%
+\contentsline {subsubsection}{Backbone}{17}{section*.21}%
+\contentsline {subsubsection}{RPN}{17}{section*.22}%
+\contentsline {subsubsection}{RoI Heads}{18}{section*.23}%
+\contentsline {section}{\numberline {3.4}Few-shot object detection(FSOD)}{19}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Prístupy k FSOD}{20}{subsection.3.4.1}%
+\contentsline {subsubsection}{Meta-learning}{20}{section*.24}%
+\contentsline {subsubsection}{Transfer learning}{21}{section*.25}%
+\contentsline {subsubsection}{Augmentácia dát}{21}{section*.26}%
+\contentsline {subsection}{\numberline {3.4.2}Datasety pre vyhodnotenie FSOD}{21}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Aktuálne riešenia FSOD}{22}{subsection.3.4.3}%
+\contentsline {subsubsection}{Frustrantingly simple few-shot object detection}{22}{section*.27}%
+\contentsline {chapter}{\numberline {4}Testovanie FSFSODT}{25}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Dataset}{25}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Tréning}{26}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Testovanie rýchlosti a presnosti modelu pri zmene počtu trénovacích obrázkov novel tried}{27}{subsection.4.2.1}%
+\contentsline {subsubsection}{1-shot detekcia}{27}{section*.29}%
+\contentsline {subsubsection}{2-shot detekcia}{29}{section*.33}%
+\contentsline {subsubsection}{3-shot detekcia}{31}{section*.37}%
+\contentsline {subsubsection}{5-shot detekcia}{33}{section*.41}%
+\contentsline {subsubsection}{10-shot detekcia}{35}{section*.45}%
+\contentsline {subsubsection}{15-shot detekcia}{37}{section*.49}%
+\contentsline {subsection}{\numberline {4.2.2}Vyhodnotenie}{38}{subsection.4.2.2}%
+\contentsline {chapter}{\numberline {5}Zrýchlenie FSFSOD}{42}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Zrýchlenie pomocou zmeny parametrov}{42}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Zrýchlenie pomocou zapamätania si výstupu zo zmrazených vrstiev}{46}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Zapamätanie si výstupu z backbone}{47}{subsection.5.2.1}%
+\contentsline {subsubsection}{1. Padding pre všetky obrázky na rovnakú veľkosť}{48}{section*.61}%
+\contentsline {subsubsection}{2. Pispôsobiť všetky obrázky na rovnakú veľkosť}{48}{section*.62}%
+\contentsline {subsubsection}{3. Použiť batch size = 1}{50}{section*.65}%
+\contentsline {subsubsection}{1.pokus}{51}{section*.67}%
+\contentsline {subsubsection}{2.pokus}{53}{section*.70}%
+\contentsline {subsubsection}{3.pokus}{54}{section*.73}%
+\contentsline {subsection}{\numberline {5.2.2}Zapamätanie si výstupu priamo z Box Head}{56}{subsection.5.2.2}%
+\contentsline {subsubsection}{Vyhodnotenie}{58}{section*.78}%
+\contentsline {chapter}{\numberline {6}Testovanie algoritmu pri zmene počtu tried}{59}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Fine-tuning na base + novel triedach}{59}{section.6.1}%
+\contentsline {subsubsection}{10 novel tried}{61}{section*.80}%
+\contentsline {subsubsection}{15 novel tried}{63}{section*.84}%
+\contentsline {subsubsection}{20 novel tried}{65}{section*.88}%
+\contentsline {subsubsection}{Vyhodnotenie}{68}{section*.93}%
+\contentsline {section}{\numberline {6.2}Fine-tuning len na novel triedach}{68}{section.6.2}%
+\contentsline {chapter}{\numberline {7}Záver}{70}{chapter.7}%

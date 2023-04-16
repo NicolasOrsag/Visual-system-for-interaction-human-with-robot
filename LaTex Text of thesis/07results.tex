@@ -9,7 +9,7 @@ Pri testovaní druhého spomínaného prístupu som zistil, že je príliš pam�
 
 Autori trénovali model na 4 20GB GPU. A ja som dostal nasledovný výstup aj po úprave trénovacích parametrov ako batch size, learning rate, tak aby stačilo čo najmenej pamäte: 
 
-\begin{figure}[!hbt]
+\begin{figure}[H]
 \includegraphics{images/no_memory.png}
 \centering
 \caption{Výstup pri fine-tuningu pomocou Meta Faster-RCNN}
@@ -41,7 +41,7 @@ som spustil finetuning poslednej vrstvy modelu.
 
 Pri fine-tuningu som použil tieto paremetre:
 
-\begin{figure}[!hbt]
+\begin{figure}[H]
 \includegraphics[width=\textwidth]{images/Training_parameters.png}
 \caption{Tréningové parametre pri fine-tuningu}
 \label{fig:image}
@@ -49,7 +49,7 @@ Pri fine-tuningu som použil tieto paremetre:
 
 \subsubsection{Vyhodnotenie:}
 
-\begin{figure}[!hbt]
+\begin{figure}[H]
 \includegraphics[width=\textwidth]{images/eval1.png}
 \includegraphics[width=\textwidth]{images/eval2.png}
 \includegraphics[width=\textwidth]{images/eval3.png}
