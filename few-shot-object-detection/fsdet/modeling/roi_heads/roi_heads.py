@@ -247,9 +247,10 @@ class ROIHeads(torch.nn.Module):
 
         return proposals_with_gt
 
-    def forward(self, images, features, proposals, targets=None):
+    def forward(self, images, features, proposals, targets=None, name=None):
         """
         Args:
+            name (string): file_id + "_" + min_width
             images (ImageList):
             features (dict[str: Tensor]): input data as a mapping from feature
                 map name to tensor. Axis 0 represents the number of images `N` in
@@ -338,7 +339,7 @@ class Res5ROIHeads(ROIHeads):
         x = self.pooler(features, boxes)
         return self.res5(x)
 
-    def forward(self, images, features, proposals, targets=None):
+    def forward(self, images, features, proposals, targets=None, name=None):
         """
         See :class:`ROIHeads.forward`.
         """
@@ -436,25 +437,42 @@ class StandardROIHeads(ROIHeads):
             self.cls_agnostic_bbox_reg,
         )
 
-    def forward(self, images, features, proposals, targets=None):
+    def forward(self, images, features, proposals, targets=None, name=None):
         """
         See :class:`ROIHeads.forward`.
         """
         del images
-        if self.training:
-            proposals = self.label_and_sample_proposals(proposals, targets)
-        del targets
+        if name is not None:
+            proposals_path = "proposals/" + name + ".pt"
+            if features is not None:
+                proposals = self.label_and_sample_proposals(proposals, targets)
+                torch.save(proposals, proposals_path)
+                del targets
+                features_list = [features[f] for f in self.in_features]
+                losses = self._forward_box(name, features_list, proposals, True, False)
+                return proposals, losses
+            else:
+                del targets
+                proposals = torch.load(proposals_path)
+                features_list = []
+                losses = self._forward_box(name, features_list, proposals, True, True)
+                return proposals, losses
 
-        features_list = [features[f] for f in self.in_features]
-
-        if self.training:
-            losses = self._forward_box(features_list, proposals)
-            return proposals, losses
         else:
-            pred_instances = self._forward_box(features_list, proposals)
-            return pred_instances, {}
+            if self.training:
+                proposals = self.label_and_sample_proposals(proposals, targets)
+            del targets
 
-    def _forward_box(self, features, proposals):
+            features_list = [features[f] for f in self.in_features]
+
+            if self.training:
+                losses = self._forward_box(name, features_list, proposals)
+                return proposals, losses
+            else:
+                pred_instances = self._forward_box(name, features_list, proposals)
+                return pred_instances, {}
+
+    def _forward_box(self, name, features, proposals, save=False,  skip=False):
         """
         Forward logic of the box prediction branch.
 
@@ -469,28 +487,51 @@ class StandardROIHeads(ROIHeads):
             In training, a dict of losses.
             In inference, a list of `Instances`, the predicted instances.
         """
-        box_features = self.box_pooler(
-            features, [x.proposal_boxes for x in proposals]
-        )
-        box_features = self.box_head(box_features)
-        pred_class_logits, pred_proposal_deltas = self.box_predictor(
-            box_features
-        )
-        del box_features
+        if name is not None:
+            box_features_path = "box_features/" + name + ".pt"
 
-        outputs = FastRCNNOutputs(
-            self.box2box_transform,
-            pred_class_logits,
-            pred_proposal_deltas,
-            proposals,
-            self.smooth_l1_beta,
-        )
-        if self.training:
-            return outputs.losses()
-        else:
-            pred_instances, _ = outputs.inference(
-                self.test_score_thresh,
-                self.test_nms_thresh,
-                self.test_detections_per_img,
+        if skip:
+            box_features = torch.load(box_features_path)
+            pred_class_logits, pred_proposal_deltas = self.box_predictor(
+                box_features
             )
-            return pred_instances
+            del box_features
+            outputs = FastRCNNOutputs(
+                self.box2box_transform,
+                pred_class_logits,
+                pred_proposal_deltas,
+                proposals,
+                self.smooth_l1_beta,
+            )
+            return outputs.losses()
+
+        else:
+            box_features = self.box_pooler(
+                features, [x.proposal_boxes for x in proposals]
+            )
+            box_features = self.box_head(box_features)
+
+            if save:
+                torch.save(box_features, box_features_path)
+
+            pred_class_logits, pred_proposal_deltas = self.box_predictor(
+                box_features
+            )
+            del box_features
+
+            outputs = FastRCNNOutputs(
+                self.box2box_transform,
+                pred_class_logits,
+                pred_proposal_deltas,
+                proposals,
+                self.smooth_l1_beta,
+            )
+            if self.training:
+                return outputs.losses()
+            else:
+                pred_instances, _ = outputs.inference(
+                    self.test_score_thresh,
+                    self.test_nms_thresh,
+                    self.test_detections_per_img,
+                )
+                return pred_instances

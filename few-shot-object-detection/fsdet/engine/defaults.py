@@ -341,10 +341,10 @@ class DefaultTrainer(SimpleTrainer):
         # The checkpoint stores the training iteration that just finished, thus we start
         # at the next iteration (or iter zero if there's no checkpoint).
         self.start_iter = (
-            self.checkpointer.resume_or_load(
-                self.cfg.MODEL.WEIGHTS, resume=resume
-            ).get("iteration", -1)
-            + 1
+                self.checkpointer.resume_or_load(
+                    self.cfg.MODEL.WEIGHTS, resume=resume
+                ).get("iteration", -1)
+                + 1
         )
 
     def build_hooks(self):
@@ -382,8 +382,12 @@ class DefaultTrainer(SimpleTrainer):
         # some checkpoints may have more precise statistics than others.
         if comm.is_main_process():
             ret.append(
-                hooks.PeriodicCheckpointer(
-                    self.checkpointer, cfg.SOLVER.CHECKPOINT_PERIOD
+                hooks.BestCheckpointer(
+                    eval_period=cfg.SOLVER.CHECKPOINT_PERIOD,
+                    checkpointer=self.checkpointer,
+                    val_metric="total_loss",
+                    mode="min",
+                    file_prefix="model_best"
                 )
             )
 

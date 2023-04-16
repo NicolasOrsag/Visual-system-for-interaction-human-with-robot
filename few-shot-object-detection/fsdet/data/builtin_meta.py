@@ -268,7 +268,21 @@ PASCAL_VOC_ALL_CATEGORIES = {
         "cow",
         "motorbike",
         "sofa",
-        "apple"
+        "Apple",
+        'Zebra',
+        'orange',
+        'truck',
+        'Bears',
+        'Giraffe',
+        'umbrella',
+        'football',
+        'baton',
+        'forks',
+        'knife',
+        'banana',
+        'carrot',
+        'Hotdogs-detect',
+        'computermouse'
     ],
     2: [
         "bicycle",
@@ -317,7 +331,10 @@ PASCAL_VOC_ALL_CATEGORIES = {
 }
 
 PASCAL_VOC_NOVEL_CATEGORIES = {
-    1: ["bird", "bus", "cow", "motorbike", "sofa", "apple"],
+    1: ["bird", "bus", "cow", "motorbike", "sofa",
+        "Apple", 'Zebra', 'orange', 'truck', 'Bears',
+        'Giraffe', 'umbrella', 'football', 'baton', 'forks',
+        'knife', 'banana', 'carrot', 'Hotdogs-detect', 'computermouse'],
     2: ["aeroplane", "bottle", "cow", "horse", "sofa"],
     3: ["boat", "cat", "motorbike", "sheep", "sofa"],
 }

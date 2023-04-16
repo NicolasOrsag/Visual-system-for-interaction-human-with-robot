@@ -7,10 +7,12 @@ import xml.etree.ElementTree as ET
 import numpy as np
 from fsdet.utils.file_io import PathManager
 
-VOC_CLASSES = ['aeroplane', 'bicycle', 'bird', 'boat', 'bottle', 'bus', 'car',
+VOC_CLASSES = ['aeroplane', 'Apple', 'bicycle', 'bird', 'boat', 'bottle', 'bus', 'car',
                'cat', 'chair', 'cow', 'diningtable', 'dog', 'horse',
                'motorbike', 'person', 'pottedplant', 'sheep', 'sofa', 'train',
-               'tvmonitor']  # fmt: skip
+               'tvmonitor', 'Zebra', 'orange', 'truck', 'Bears', 'Giraffe',
+               'umbrella', 'football', 'baton', 'forks', 'knife', 'banana',
+               'carrot', 'Hotdogs-detect', 'computermouse']  # fmt: skip
 
 
 def parse_args():
@@ -26,13 +28,13 @@ def generate_seeds(args):
     data = []
     data_per_cat = {c: [] for c in VOC_CLASSES}
     for year in [2007, 2012]:
-        data_file = "datasets/VOC{}/ImageSets/Main/trainval.txt".format(year)
+        data_file = "VOC{}/ImageSets/Main/trainval.txt".format(year)
         with PathManager.open(data_file) as f:
-            fileids = np.loadtxt(f, dtype=np.str).tolist()
+            fileids = np.loadtxt(f, dtype=str).tolist()
         data.extend(fileids)
     for fileid in data:
-        year = "2012" if "_" in fileid else "2007"
-        dirname = os.path.join("datasets", "VOC{}".format(year))
+        year = "2012" if "_" in fileid and "r" not in fileid else "2007"
+        dirname = os.path.join("", "VOC{}".format(year))
         anno_file = os.path.join(dirname, "Annotations", fileid + ".xml")
         tree = ET.parse(anno_file)
         clses = []
@@ -41,9 +43,8 @@ def generate_seeds(args):
             clses.append(cls)
         for cls in set(clses):
             data_per_cat[cls].append(anno_file)
-
     result = {cls: {} for cls in data_per_cat.keys()}
-    shots = [1, 2, 3, 5, 10]
+    shots = [1, 2, 3, 5, 10, 15]
     for i in range(args.seeds[0], args.seeds[1]):
         random.seed(i)
         for c in data_per_cat.keys():
@@ -57,7 +58,9 @@ def generate_seeds(args):
                         tree = ET.parse(s)
                         file = tree.find("filename").text
                         year = tree.find("folder").text
-                        name = "datasets/{}/JPEGImages/{}".format(year, file)
+                        if year is None:
+                            year = "VOC2007"
+                        name = "{}/JPEGImages/{}".format(year, file)
                         c_data.append(name)
                         for obj in tree.findall("object"):
                             if obj.find("name").text == c:
@@ -65,7 +68,7 @@ def generate_seeds(args):
                         if num_objs >= diff_shot:
                             break
                 result[c][shot] = copy.deepcopy(c_data)
-        save_path = "datasets/vocsplit/seed{}".format(i)
+        save_path = "vocsplit/seed{}".format(i)
         os.makedirs(save_path, exist_ok=True)
         for c in result.keys():
             for shot in result[c].keys():

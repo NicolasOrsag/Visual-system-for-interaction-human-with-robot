@@ -50,7 +50,22 @@ class GeneralizedRCNN(nn.Module):
         self.normalizer = lambda x: (x - pixel_mean) / pixel_std
         self.to(self.device)
 
+        self.features = {}
+        self.freeze = False
+
+        self.max_size = [0, 0]
+
+        self.min_widths = set()
+
+        self.saved_images = set()
+
+        self.freeze2 = False
+
+        self.saved_images2 = set()
+
         if cfg.MODEL.BACKBONE.FREEZE:
+            # self.freeze = True
+            self.freeze2 = True
             for p in self.backbone.parameters():
                 p.requires_grad = False
             print("froze backbone parameters")
@@ -90,8 +105,11 @@ class GeneralizedRCNN(nn.Module):
         """
         if not self.training:
             return self.inference(batched_inputs)
-
         images = self.preprocess_image(batched_inputs)
+        # print(images.tensor[0].shape)
+        # self.min_widths.add(images.tensor.shape[3])
+        # print(self.min_widths)
+
         if "instances" in batched_inputs[0]:
             gt_instances = [
                 x["instances"].to(self.device) for x in batched_inputs
@@ -108,30 +126,88 @@ class GeneralizedRCNN(nn.Module):
         else:
             gt_instances = None
 
-        features = self.backbone(images.tensor)
+        # if self.freeze:
+        #     # if len(batched_inputs == 1):
+        #     #     if batched_inputs[0]["image_id"] not in self.features:
+        #     #         features = self.backbone(images.tensor[0].unsqueeze(0))
+        #     #             self.features[batched_inputs[0]["image_id"]] = features
+        #     # min_width = str(images.tensor[0].shape[1])
+        #     # name = batched_inputs[0]["image_id"] + "_" + min_width
+        #     # features_path = "features/" + name + ".pt"
+        #     # if name not in self.saved_images:
+        #     #     features = self.backbone(images.tensor[0].unsqueeze(0))
+        #     #     self.saved_images.add(name)
+        #     #     torch.save(features, features_path)
+        #     # else:
+        #     #     features = torch.load(features_path)
+        #
+        #     for i in range(len(batched_inputs)):
+        #         min_width = str(images.tensor[i].shape[1])
+        #         # if batched_inputs[i]["image_id"] + "_" + min_width not in self.features:
+        #         if batched_inputs[i]["image_id"] not in self.features:
+        #             features = self.backbone(images.tensor[i].unsqueeze(0))
+        #             # self.features[batched_inputs[i]["image_id"] + "_" + min_width] = features
+        #             self.features[batched_inputs[i]["image_id"]] = features
+        #
+        #     if len(batched_inputs) == 1:
+        #         min_width = str(images.tensor[0].shape[1])
+        #         features = self.features[batched_inputs[0]["image_id"] + "_" + min_width]
+        #         # features = self.features[batched_inputs[0]["image_id"]]
+        #         # print(sorted(self.features.keys()))
+        #     else:
+        #         features = {k: torch.stack([self.features[batched_inputs[0]["image_id"]][k],
+        #                                     self.features[batched_inputs[1]["image_id"]][k]]).squeeze() for k in
+        #                     self.features[batched_inputs[0]["image_id"]].keys()}
+        #     # features = self.features[batched_inputs[0]["image_id"]]
+        # else:
+        #     features = self.backbone(images.tensor)
+        min_width = str(images.tensor[0].shape[1])
+        name = batched_inputs[0]["image_id"] + "_" + min_width
 
-        if self.proposal_generator:
-            proposals, proposal_losses = self.proposal_generator(
-                images, features, gt_instances
+        if self.freeze2:
+            if name not in self.saved_images2:
+                features = self.backbone(images.tensor)
+                proposals, proposal_losses = self.proposal_generator(
+                    images, features, gt_instances
+                )
+                self.saved_images2.add(name)
+            else:
+                proposals = None
+                features = None
+                gt_instances = None
+
+            _, detector_losses = self.roi_heads(
+                images, features, proposals, gt_instances, name
             )
+
+            return detector_losses
+
         else:
-            assert "proposals" in batched_inputs[0]
-            proposals = [
-                x["proposals"].to(self.device) for x in batched_inputs
-            ]
-            proposal_losses = {}
+            features = self.backbone(images.tensor)
 
-        _, detector_losses = self.roi_heads(
-            images, features, proposals, gt_instances
-        )
+            if self.proposal_generator:
+                proposals, proposal_losses = self.proposal_generator(
+                    images, features, gt_instances
+                )
 
-        losses = {}
-        losses.update(detector_losses)
-        losses.update(proposal_losses)
-        return losses
+            else:
+                assert "proposals" in batched_inputs[0]
+                proposals = [
+                    x["proposals"].to(self.device) for x in batched_inputs
+                ]
+                proposal_losses = {}
+
+            _, detector_losses = self.roi_heads(
+                images, features, proposals, gt_instances
+            )
+
+            losses = {}
+            losses.update(detector_losses)
+            losses.update(proposal_losses)
+            return losses
 
     def inference(
-        self, batched_inputs, detected_instances=None, do_postprocess=True
+            self, batched_inputs, detected_instances=None, do_postprocess=True
     ):
         """
         Run inference on the given inputs.
@@ -175,7 +251,7 @@ class GeneralizedRCNN(nn.Module):
         if do_postprocess:
             processed_results = []
             for results_per_image, input_per_image, image_size in zip(
-                results, batched_inputs, images.image_sizes
+                    results, batched_inputs, images.image_sizes
             ):
                 height = input_per_image.get("height", image_size[0])
                 width = input_per_image.get("width", image_size[1])
@@ -259,7 +335,7 @@ class ProposalNetwork(nn.Module):
 
         processed_results = []
         for results_per_image, input_per_image, image_size in zip(
-            proposals, batched_inputs, images.image_sizes
+                proposals, batched_inputs, images.image_sizes
         ):
             height = input_per_image.get("height", image_size[0])
             width = input_per_image.get("width", image_size[1])

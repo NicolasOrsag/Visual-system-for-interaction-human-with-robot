@@ -11,6 +11,7 @@ from detectron2.utils.logger import setup_logger
 
 from demo.predictor import VisualizationDemo
 from fsdet.config import get_cfg
+from fsdet.data.builtin_meta import PASCAL_VOC_ALL_CATEGORIES
 
 # constants
 WINDOW_NAME = "COCO detections"

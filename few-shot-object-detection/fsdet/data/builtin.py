@@ -229,7 +229,7 @@ def register_all_pascal_voc(root="datasets"):
     # register small meta datasets for fine-tuning stage
     for prefix in ["all", "novel"]:
         for sid in range(1, 4):
-            for shot in [1, 2, 3, 5, 10]:
+            for shot in [1, 2, 3, 4, 5, 10, 15]:
                 for year in [2007, 2012]:
                     for seed in range(100):
                         seed = "" if seed == 0 else "_seed{}".format(seed)
