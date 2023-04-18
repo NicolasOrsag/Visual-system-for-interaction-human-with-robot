@@ -7,6 +7,7 @@ from detectron2.modeling.proposal_generator import build_proposal_generator
 from detectron2.structures import ImageList
 from detectron2.utils.logger import log_first_n
 from torch import nn
+import sys
 
 from fsdet.modeling.roi_heads import build_roi_heads
 
@@ -62,6 +63,8 @@ class GeneralizedRCNN(nn.Module):
         self.freeze2 = False
 
         self.saved_images2 = set()
+
+        self.num_classes = cfg.MODEL.ROI_HEADS.NUM_CLASSES
 
         if cfg.MODEL.BACKBONE.FREEZE:
             # self.freeze = True
@@ -161,30 +164,46 @@ class GeneralizedRCNN(nn.Module):
         #     # features = self.features[batched_inputs[0]["image_id"]]
         # else:
         #     features = self.backbone(images.tensor)
+
         min_width = str(images.tensor[0].shape[1])
+
         name = batched_inputs[0]["image_id"] + "_" + min_width
 
+
+        # height, width = images.tensor[0].shape
+        #
+        # longer_edge = str(max(height, width))
+        #
+        names = list(map(lambda it: it["image_id"] + "_" + min_width, batched_inputs))
+
+        # print(name)
         if self.freeze2:
-            if name not in self.saved_images2:
-                features = self.backbone(images.tensor)
-                proposals, proposal_losses = self.proposal_generator(
-                    images, features, gt_instances
-                )
-                self.saved_images2.add(name)
-            else:
-                proposals = None
-                features = None
-                gt_instances = None
+            for idx, name in enumerate(names):
+                if name not in self.saved_images2:
+                    image_tensor = images.tensor[0].unsqueeze(0)
+                    features = self.backbone(image_tensor)
+                    #print(images)
+                    #print(gt_instances)
+                    image_size = [images.image_sizes[0]]
+                    proposals, proposal_losses = self.proposal_generator(
+                        ImageList(image_tensor, image_size), features, [gt_instances[idx]]
+                    )
+                    self.saved_images2.add(name)
+                    self.roi_heads(
+                        ImageList(image_tensor, image_size), features, proposals, [gt_instances[idx]], name
+                    )
+
+            proposals = None
+            features = None
+            gt_instances = None
 
             _, detector_losses = self.roi_heads(
-                images, features, proposals, gt_instances, name
+                images, features, proposals, gt_instances, names
             )
 
             return detector_losses
-
         else:
             features = self.backbone(images.tensor)
-
             if self.proposal_generator:
                 proposals, proposal_losses = self.proposal_generator(
                     images, features, gt_instances
@@ -229,7 +248,6 @@ class GeneralizedRCNN(nn.Module):
 
         images = self.preprocess_image(batched_inputs)
         features = self.backbone(images.tensor)
-
         if detected_instances is None:
             if self.proposal_generator:
                 proposals, _ = self.proposal_generator(images, features, None)

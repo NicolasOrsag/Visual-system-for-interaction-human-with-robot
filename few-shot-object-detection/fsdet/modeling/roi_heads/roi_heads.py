@@ -443,17 +443,20 @@ class StandardROIHeads(ROIHeads):
         """
         del images
         if name is not None:
-            proposals_path = "proposals/" + name + ".pt"
             if features is not None:
+                proposals_path = "proposals/" + name + ".pt"
                 proposals = self.label_and_sample_proposals(proposals, targets)
                 torch.save(proposals, proposals_path)
                 del targets
                 features_list = [features[f] for f in self.in_features]
-                losses = self._forward_box(name, features_list, proposals, True, False)
-                return proposals, losses
+                self._forward_box(name, features_list, proposals, True, False)
+                # return proposals, losses
             else:
-                del targets
-                proposals = torch.load(proposals_path)
+                proposals = []
+                for i in name:
+                    proposals_path = "proposals/" + i + ".pt"
+                    proposals.append(torch.load(proposals_path)[0])
+
                 features_list = []
                 losses = self._forward_box(name, features_list, proposals, True, True)
                 return proposals, losses
@@ -487,11 +490,13 @@ class StandardROIHeads(ROIHeads):
             In training, a dict of losses.
             In inference, a list of `Instances`, the predicted instances.
         """
-        if name is not None:
-            box_features_path = "box_features/" + name + ".pt"
 
         if skip:
-            box_features = torch.load(box_features_path)
+            box_features_list = []
+            for i in name:
+                box_features_path = "box_features/" + i + ".pt"
+                box_features_list.append(torch.load(box_features_path))
+            box_features = torch.cat(box_features_list, dim=0)
             pred_class_logits, pred_proposal_deltas = self.box_predictor(
                 box_features
             )
@@ -506,32 +511,36 @@ class StandardROIHeads(ROIHeads):
             return outputs.losses()
 
         else:
+
             box_features = self.box_pooler(
                 features, [x.proposal_boxes for x in proposals]
             )
             box_features = self.box_head(box_features)
+            # print(box_features.shape)
 
             if save:
+                box_features_path = "box_features/" + name + ".pt"
                 torch.save(box_features, box_features_path)
-
-            pred_class_logits, pred_proposal_deltas = self.box_predictor(
-                box_features
-            )
-            del box_features
-
-            outputs = FastRCNNOutputs(
-                self.box2box_transform,
-                pred_class_logits,
-                pred_proposal_deltas,
-                proposals,
-                self.smooth_l1_beta,
-            )
-            if self.training:
-                return outputs.losses()
             else:
-                pred_instances, _ = outputs.inference(
-                    self.test_score_thresh,
-                    self.test_nms_thresh,
-                    self.test_detections_per_img,
+
+                pred_class_logits, pred_proposal_deltas = self.box_predictor(
+                    box_features
                 )
-                return pred_instances
+                del box_features
+
+                outputs = FastRCNNOutputs(
+                    self.box2box_transform,
+                    pred_class_logits,
+                    pred_proposal_deltas,
+                    proposals,
+                    self.smooth_l1_beta,
+                )
+                if self.training:
+                    return outputs.losses()
+                else:
+                    pred_instances, _ = outputs.inference(
+                        self.test_score_thresh,
+                        self.test_nms_thresh,
+                        self.test_detections_per_img,
+                    )
+                    return pred_instances
