@@ -7,22 +7,22 @@ V úvodnej kapitole sa budeme venovať základným pojmom, ktoré sú nevyhnutn�
 
 \setlength{\parindent}{20pt}
 
-\hspace{\parindent}V súčasnosti predstavuje počítačové videnie v informatike veľmi rýchlo rastúci a progresívny smer. Snaží sa priblížiť vnímaniu sveta z pohľadu ľudského oka, ktoré je pre nás prirodzené a automaticky sme schopný rozpoznávať objekty, farby a kontext toho čo vidíme. Avšak plné sémanticke pochopenie videnej reality je veľmi komplexné a zatiaľ nie sme schopný ho získať spracovaním digitálneho obrazu. Hlavne preto, že pochopenie obrazu môže vyplývať zo súvislostí, ktoré nie sú súčasťou obrazu.
+V súčasnosti predstavuje počítačové videnie v informatike veľmi rýchlo rastúci a progresívny smer. Snaží sa priblížiť vnímaniu sveta z pohľadu ľudského oka, ktoré je pre nás prirodzené a automaticky sme schopný rozpoznávať objekty, farby a kontext toho čo vidíme. Avšak plné sémanticke pochopenie videnej reality je veľmi komplexné a zatiaľ nie sme schopný ho získať spracovaním digitálneho obrazu. Hlavne preto, že pochopenie obrazu môže vyplývať zo súvislostí, ktoré nie sú súčasťou obrazu.
 
 Avšak počítačové videnie sa posúva veľmi rýchlo vpred. Neustále vynikajú nové algoritmy a prístupy či už na detekciu objektov alebo klasifikáciu obrazu. Medzi základné problémy počítačového videnia patrí klasifikácia, objektová detekcia a segmentácia. Pri klasifikácii sa snažíme obraz priradiť do jednej z tried. V objektovej detekcii sa snažíme v obraze určiť oblasti všetkých známych objektov a priradiť ich do tried. A pri segmentácii je našim cieľom rozdeliť obraz do viacero oblastí a každému pixlu určiť oblasť do ktorej patrí. 
 
 \section{Príznaky}
 
-\hspace{\parindent}Pri riešení problémov v počítačovom videní sa využívajú príznaky. Príznak v počítačovom videní je meratelný kus dát v obrázku, ktorý je unikátny pre špecifický objekt. Príznak môže reprezentovať napríklad štýl sfarbenia, nejaký tvar, či už čiaru alebo hranu v obraze alebo nejakú časť obrazu. Vďaka dobrému príznaku dokážeme od seba rozlíšiť objekty. Napríklad ak máme rozlíšiť mačku a bicykel tak ako dobrý príznak by mohlo byť, že na obrázku sa nachádza koleso. Hneď by sme vedeli vďaka tomuto príznaku klasifikovať obrázok do týchto dvoch tried. Ak by sme však mali za úlohu zistiť či je na obrázku motorka alebo bicykel, tak by nám tento príznak veľmi nepomohol a museli by sme pozerať na iné príznaky. Preto zväčša neextrahujeme z obrázku len jeden príznak, ale pre lepšiu detekciu vyberáme viacej príznakov, ktoré tvoria príznakový vektor. 
+Pri riešení problémov v počítačovom videní sa využívajú príznaky. Príznak v počítačovom videní je meratelný kus dát v obrázku, ktorý je unikátny pre špecifický objekt. Príznak môže reprezentovať napríklad štýl sfarbenia, nejaký tvar, či už čiaru alebo hranu v obraze alebo nejakú časť obrazu. Vďaka dobrému príznaku dokážeme od seba rozlíšiť objekty. Napríklad ak máme rozlíšiť mačku a bicykel tak ako dobrý príznak by mohlo byť, že na obrázku sa nachádza koleso. Hneď by sme vedeli vďaka tomuto príznaku klasifikovať obrázok do týchto dvoch tried. Ak by sme však mali za úlohu zistiť či je na obrázku motorka alebo bicykel, tak by nám tento príznak veľmi nepomohol a museli by sme pozerať na iné príznaky. Preto zväčša neextrahujeme z obrázku len jeden príznak, ale pre lepšiu detekciu vyberáme viacej príznakov, ktoré tvoria príznakový vektor. 
 
-Nie je presná definícia aké príznaky obrázku by sme mali použiť, ale závisí to skôr od nášho cieľu a typu úlohy. Príznaky sa delia na lokálne a globálne. Príznaky, ktoré platia pre celý obrázok, sa nazývajú globálne príznaky. Napríklad ako ako veľmi sú dominantné jednotlivé farby v obrázku. Globálny príznak nám opisuje obraz ako celok a mal by reporezentovať nejakú jeho špecifickú vlastnosť. Lokálne príznaky sa extrahujú len z určitej zaujímavej oblasti v obrázku, využivajú sa najmä pri objektovej detekcii. Najskôr nájdeme zaujímavé oblasti, ktoré by mohli reprezentovať nejakú zaujímavú vlastnosť alebo nejaký objekt. Následne vytvoríme príznakový vektor pre danú oblasť, ktorý by nám mal poskytnúť zásadnú informáciu o tejto časti obrazu. Treba rátať s tým, že objekt na obrázku môže byť rôznej veľkosti, rôzne natočený, rôzne osvetlený, zašumený, môže sa nachádzať v rôznych častiach obrázku a podobne. Preto naše príznaky by mali byť ideálne invariantné voči týmto zmenám.
+Nie je presná definícia aké príznaky obrázku by sme mali použiť, ale závisí to skôr od nášho cieľu a typu úlohy. Príznaky sa delia na lokálne a globálne. Príznaky, ktoré popisujú celý obrázok, sa nazývajú globálne príznaky. Napríklad ako ako veľmi sú dominantné jednotlivé farby v obrázku. Globálny príznak nám opisuje obraz ako celok a mal by reporezentovať nejakú jeho špecifickú vlastnosť. Lokálne príznaky sa extrahujú len z určitej zaujímavej oblasti v obrázku, využivajú sa najmä pri objektovej detekcii. Najskôr nájdeme zaujímavé oblasti, ktoré by mohli reprezentovať nejakú zaujímavú vlastnosť alebo nejaký objekt. Následne vytvoríme príznakový vektor pre danú oblasť, ktorý by nám mal poskytnúť zásadnú informáciu o tejto časti obrazu. Treba rátať s tým, že objekt na obrázku môže byť rôznej veľkosti, rôzne natočený, rôzne osvetlený, zašumený, môže sa nachádzať v rôznych častiach obrázku a podobne. Preto naše príznaky by mali byť ideálne invariantné voči týmto zmenám.
 
 \section{Objektová detekcia}
 
-\hspace{\parindent}Asi najskúmanejším problémom v počítačovom videní je objektová detekcia, ktorá spočíva v rozpoznaní jednotlivých objektov a ich pozícii v digitálnom obraze. K tomuto problému sa dá pristupovať tradičnými metódami počítačového videnia, alebo dnes už veľmi rozšireným s oveľa lepšími a presnejšími výsledkami, ako pri tradičných metódach a to pomocou hlbokého učenia, ktorých klúčom je naučiť sa na veľkých dátach extrahovať príznaky tak aby mala detekcia čo najväčšiu presnosť.
+Jedným z najskúmanejších problémov v počítačovom videní je objektová detekcia, ktorá spočíva v rozpoznaní jednotlivých objektov a ich pozícii v digitálnom obraze. K tomuto problému sa dá pristupovať tradičnými metódami počítačového videnia, alebo dnes už veľmi rozšireným s oveľa lepšími a presnejšími výsledkami, ako pri tradičných metódach a to pomocou hlbokého učenia, ktorých klúčom je naučiť sa na veľkých dátach extrahovať príznaky, tak aby mala detekcia čo najväčšiu presnosť.
 
 \subsection{Tradičé metódy}
-\hspace{\parindent}Ako prvé vznikli tradičné metódy. Vysvetlíme si ako fungujú , pretože nám to pomôže pochopiť ako funguje dnes najvýuživanejší a najpresnejší prístup hlbokého učenia na ktorý sa zameriame v tejto práci. Tradičné metódy v objektovej detekcii majú zvyčajne tri etapy: vybratie oblasti, extrakcia príznakov, klasifikácia objektu. 
+Ako prvé vznikli tradičné metódy. Vysvetlíme si ako fungujú, pretože nám to pomôže pochopiť ako funguje dnes najvýuživanejší a najpresnejší prístup hlbokého učenia na ktorý sa zameriame v tejto práci. Tradičné metódy v objektovej detekcii majú zvyčajne tri etapy: vybratie oblasti, extrakcia príznakov, klasifikácia objektu. 
 
 V prvej etape sa snažíme lokalizovať objekt. Keďže objekt môže byť rôznej veľkosti, musíme skenovať celý obrázok pomocou posúvneho okna rôznej veľkosti. Táto metóda je výpočtovo náročná. 
 
@@ -30,13 +30,13 @@ V druhej etape použijeme použijeme metódy ako SIFT \cite{SIFT}, HOG \cite{HOG
 
 V treťej fáze klasifikácie objektu používame zväčša Support Vector Machine(SVM) \cite{SVM} alebo Adaboost \cite{Adaboost} pre klasifikáciu cieľových objektov zo všetkých kategórii aby bola reprezentácia viac hierarchická, sémantická a informatívnejšia pre vizuálne rozpoznávanie. 
 
-Problémom pri tradičných metódach je výpočtová náročnosť pri generovaní kandidátov na bouning box (obdĺžnik ohraničujúci objekt) pomocou techniky posúvneho okna a taktiež manuálne nastavenie extrakcie príznakov nie je vždy veľmi presné. Avšak ich výhodou je, že nepotrebujeme veľký anotovaný dataset a taktiež veľkú výpočtovú silu pri tréningu, ktoré potrebujeme pri prístupe hlbokého učenia.
+Tradičné metódy majú problém s vysokou výpočtovou náročnosťou pri generovaní kandidátov na bounding box (obdĺžnik ohraničujúci objekt) pomocou posuvného okna a manuálnym nastavením extrakcie príznakov, ktoré nie je vždy veľmi presné. Napriek tomu majú výhodu, že nepotrebujú veľký anotovaný dataset ani vysokú výpočtovú silu pri tréningu, ktorú vyžaduje prístup hlbokého učenia.
 
 \subsection{Metódy hlbokého učenia}
-\hspace{\parindent} Neskôr keď tradičné metódy začali stagnovať, sa začali na riešenie problémov klasifikácie obrázkov, objektovej detekcie a segmentácie využívať metódy hlbokého učenia. Hlavným dôvodom, prečo metódy hlbokého učenia dosahujú lepšie výsledky ako tradičné metódy je, že netreba manuálne voliť príznaky, ale ich úlohou je nájsť najlepšie príznaky pre danú úlohu. Využívajú na to neurónové siete. 
+Neskôr keď tradičné metódy začali stagnovať, sa začali na riešenie problémov klasifikácie obrázkov, objektovej detekcie a segmentácie využívať metódy hlbokého učenia. Hlavným dôvodom, prečo metódy hlbokého učenia dosahujú lepšie výsledky ako tradičné metódy je, že netreba manuálne voliť príznaky, ale ich úlohou je nájsť najlepšie príznaky pre danú úlohu. Využívajú na to neurónové siete. 
 
 \subsubsection{Neurónové siete}
-\hspace{\parindent} Základným stavebným blokom neurónovej siete je neurón. Vysvetlíme si ako funguje neurónova sieť zložená len z jedného neurónu. Do neurónu vstupuje m vstupov ktoré predstavuje vstupný vektor $\vec{x} = (x_1, x_2, ...  x_m)$. Každý z týchto vstupov má svoju váhu, váhy reprezunetujeme váhovým vektorom $\vec{w} = (w_1, w_2, ...  w_m)$. Najprv spravíme skalárný súčin vstupného a váhového vektora a prirátame k tomu bias $b$. Následne aplikujeme do nelienárnej aktivačnej funkcie $f$ a dostaneme výstup z neurónu. Hlavnou úlohou aktivačnej funkcie je zavedenie nelinearity. 
+Základným stavebným blokom neurónovej siete je neurón. Vysvetlíme si ako funguje neurónova sieť zložená len z jedného neurónu. Do neurónu vstupuje m vstupov ktoré predstavuje vstupný vektor $\vec{x} = (x_1, x_2, ...  x_m)$. Každý z týchto vstupov má svoju váhu. Váhy reprezunetujeme váhovým vektorom $\vec{w} = (w_1, w_2, ...  w_m)$. Najprv spravíme skalárný súčin vstupného a váhového vektora a prirátame k tomu bias $b$. Následne aplikujeme do nelienárnej aktivačnej funkcie $f$ a dostaneme výstup z neurónu. Hlavnou úlohou aktivačnej funkcie je zavedenie nelinearity. 
 
 \begin{equation}
 y = f(\vec{w} \cdot \vec{x} + b) \label{eq:perceptron}
@@ -49,25 +49,23 @@ Váhy $\vec{w}$ a bias $b$ sú parametre, ktoré sa pri tréningu neurónovej si
 Najviac využívaným typom neurónových sietí v počítačovom videní sú konvolučné neuronové siete, ktoré sú ideálne na spracovanie dát v mriežkovitom tvare ako napríklad obrázkov. O nich si povieme viac v ďalšej časti.
 
 \subsubsection{Úvod do CNN}
-\hspace{\parindent} Konvolučné neuronové siete (CNN) \cite{CNN} sú typ neurónovej siete, ktorá obsahuje konvolučné vrstvy. Konvolučné vrstvy skenujú dáta pomocou množiny filtrov, kde každý filter hľadá špecifický vzor v dátach. Vďaka týmto vrstvám sú CNN ideálne na spracovanie dát mriežkovitého tvaru ako napríklad obrázky. Teraz si vysvetlíme ako fungujú kovolučné vrstvy.
+Konvolučné neuronové siete (CNN) \cite{CNN} sú typ neurónovej siete, ktorá obsahuje konvolučné vrstvy. Konvolučné vrstvy skenujú dáta pomocou množiny filtrov, kde každý filter hľadá špecifický vzor v dátach. Vďaka týmto vrstvám sú CNN ideálne na spracovanie dát mriežkovitého tvaru ako napríklad obrázky. Teraz si vysvetlíme ako fungujú kovolučné vrstvy.
 
 \subsubsection{Konvolučné vrstvy}
-\hspace{\parindent} 
-Ako sme si spomenuli v úvode, konvolúcia sa deje pomocou filtrov. Aplikáciu filtra si vysvetlíme pomocou konkrétneho príkladu na obrázku \ref{fig:image301} kde máme vstupný obrázok veľkosti 6x6 a filter veľkosti 3x3, po aplikácii tohto filtru na obrázok dostaneme výstup veľkosti 4x4. Na obrázku \ref{fig:image301} vidíme vyrátanú prvú hodnotu na výstupe. Túto hodnotu dostaneme prenásobením hodnôt ľavého horného rohu veľkosti filtra z obrazu (modré okno na obrázku) s hodnotami filtra a následným sčítaním násobkov. Pre vyrátanie druhej hodnoty v prvom riadku sa naše modré okno veľkosti 3x3, ktoré predstavuje hodnoty brané z obrázka posunie o 1 doprava a aplikujeme rovnaký postup ako pri výpočte prvej výstupnej hodnoty s novými hodnotami z obrázka. Takýmto spôsobom vyrátame všetky hodnoty v prvom riadku a následne pre ďalší riadok posunieme naše okno, ktoré berie hodnoty z obrázka o 1 nadol. 
+
+Ako sme si spomenuli v úvode, konvolúcia sa deje pomocou filtrov. Aplikáciu filtra si vysvetlíme pomocou konkrétneho príkladu na obrázku \ref{fig:image301} kde máme vstupný obrázok veľkosti 6x6 a filter veľkosti 3x3, po aplikácii tohto filtru na obrázok dostaneme výstup veľkosti 4x4. Na obrázku \ref{fig:image301} vidíme vyrátanú prvú hodnotu na výstupe. Túto hodnotu dostaneme prenásobením hodnôt ľavého horného rohu veľkosti filtra z obrazu (modré okno na obrázku) s hodnotami filtra a následným sčítaním násobkov. Pre vyrátanie druhej hodnoty v prvom riadku sa naše modré okno veľkosti 3x3, ktoré predstavuje hodnoty brané z obrázka posunie o 1 doprava a aplikujeme rovnaký postup ako pri výpočte prvej výstupnej hodnoty s novými hodnotami z obrázka. Takýmto spôsobom vyrátame všetky hodnoty v prvom riadku a následne pre ďalší riadok posunieme naše okno, ktoré berie hodnoty z obrázka o 1 nadol. Toto posunutie sa nazýva stride a dá sa nastaviť aj na vyššie číslo ako 1.
 
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{images/filter.png}
 \centering
-\caption{Aplikácia filtra}
+\caption{Konkrétny príklad aplikácie filtra na vstup}
 \label{fig:image301}
 \end{figure}
-
-Toto posunutie sa nazýva stride a dá sa nastaviť aj na vyššie číslo ako 1.
 
 Ďalší nastaviteľný parameter pri konvolúcii je padding kde zväčšíme veľkosť nášho vstupu tak, že pridáme rám okolo nášho vstupu s nulovými hodnotami ako vidíme na obrázku \ref{fig:image302} bielou farbou pridané hodnoty pri paddingu veľkosti 1. Veľkosť paddingu predstavuje šírku tohto rámu. Padding by nemal byť väčší ako výška alebo šírka filtra. Vďaka paddingu vieme napríklad dosiahnúť, že rozmery výstupu budú rovnaké ako rozmery vstupu, pri rôznych rozmeroch filtra.
 
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{images/padding.png}
+\includegraphics{images/padding.png}
 \centering
 \caption{Znázornenie paddingu pri konvolúcii}
 \label{fig:image302}
@@ -81,17 +79,17 @@ Filtrov môže byť pri konvolúcii kludne aj viac ako 1. Počet filtrov nám na
 
 
 \subsubsection{Pooling}
-\hspace{\parindent} Po konvolučnej vrstve sa v CNN zvyčajne nachádza poolingová vrstva, ktorá zvyčajne zmenšuje priestorovú dimenziu. Poznáme niekoľko typov poolingu, vrátane max poolingu a average poolingu, ale najbežnejším je max pooling, ktorý vezme maximálnu hodnotu každého poolingového regiónu. 
+Po konvolučnej vrstve sa v CNN zvyčajne nachádza poolingová vrstva, ktorá zvyčajne zmenšuje priestorovú dimenziu. Poznáme niekoľko typov poolingu, vrátane max poolingu a average poolingu, ale najbežnejším je max pooling, ktorý vezme maximálnu hodnotu každého poolingového regiónu. 
 
 Napríklad, ak pooling región je mriežka 2x2, max pooling vezme najväčšiu zo 4roch hodnôt v mriežke a vráti ju ako jednu hodnotu do výstupnej príznakovej mapy. Toto spôsobí redukciu veľkosti príznakovej mapy a ponecháme len najdôležitejšie príznaky. 
 
 \subsubsection{Plne prepojené vrstvy}
-\hspace{\parindent} Ďalej po konvolučných a poolingových vrstvách, CNN zvyčajne obsahujú jednu alebo viac plne prepojených vrstiev, ktoré kombinujú príznaky extrahované konvolučnými a poolingovými vrstvami na určenie finálnej predikcie. 
+Ďalej po konvolučných a poolingových vrstvách, CNN zvyčajne obsahujú jednu alebo viac plne prepojených vrstiev, ktoré kombinujú príznaky extrahované konvolučnými a poolingovými vrstvami na určenie finálnej predikcie. 
 
 Plne prepojená vrstva je zvyčajne výstupná vrstva, ktorá vracia finálnu predikciu CNN. Počet neurónov vo výstupnej vrstve zavisí od úlohy, ktorú máme. Napríklad, pre klasifikáciu obrázku, výstupná vrstva môže mať jeden neurón pre každú triedu, a neurón s najvyššou aktivačnou hodnotou by predstavoval predikovanú triedu. 
 
 \subsubsection{Tréning CNN}
-\hspace{\parindent}Tréning CNN zahŕňa prispôsobenie váh filtrov a spojení v sieti na minimalizovanie stratovej funkcie, ktorá meria rozdiel medzi predikciou a skutočným labelom. Proces trénovania CNN môže byť rozdelený na nasledovné kroky:
+Tréning CNN zahŕňa prispôsobenie váh filtrov a spojení v sieti na minimalizovanie stratovej funkcie, ktorá meria rozdiel medzi predikciou a skutočným labelom. Proces trénovania CNN môže byť rozdelený na nasledovné kroky:
 
 Prvým krokom je vyzbierať anotovaný dataset, ktorý bude použitý na trénovanie modelu. Tento dataset by mal byť dostatočne veľký a rôznorodý aby sa naša sieť vedela generalizovať na nové obrázky. Pred tréningom siete, je zväčša nevyhnutné predspracovanie dát, aby sme sa uistili, že sú vhodné pre CNN. To môže zahŕňať prispôsobenie veľkosti obrázkov alebo augmentáciu dát aplikovaním náhodných transformácii, pre rôznorodosť datasetu a predchádzaniu overfittingu. 
 
@@ -101,15 +99,15 @@ Tretím krokom je návrh CNN a voľba hyperparametrov. Je veľa spôsobov ako na
 
 Ďalším krokom je určenie stratovej funkcie a optimalizačného algoritmu. Stratová funkcia meria ako dobre je náš model schopný predikovať žiadaný výstup pre konkrétny vstup a jej voľba záleží na type úlohy. 
 
-Optimalizačný algoritmus(optimalizátor) je zodpovendný za prispôsobenie parametrov siete na minimalizovanie stratovej funkcie. Najbežnejší optimaizačný algoritmus je stochastic gradient descent (SGD). Iný často používaný optimalizačný algoritmus je napríklad Adam \cite{Adam}. 
+Optimalizačný algoritmus (optimalizátor) je zodpovendný za prispôsobenie parametrov siete na minimalizovanie stratovej funkcie. Najbežnejší optimaizačný algoritmus je Stochastic Gradient Descent (SGD)~\cite{sgd}. Iný často používaný optimalizačný algoritmus je napríklad Adam~\cite{Adam}. 
 
-Gradient Descent(Gradientový zostup) prispôsobuje parametre našej siete podľa vzorca \ref{eq:gradient_descent}. Vypočítaním gradientu stratovej funkcie $\frac{\partial L}{\partial w}$ získame smer k maximu stratovej funkcie v danom bode, teda s našimi aktualnými parametrami. My sa snažíme dosiahnúť minimum preto naše parametre upravíme v opačnom smere gradientu vynásobený krokom učenia(learning rate) $\eta$. Learning rate je jeden z hyperparametrov, ktorý predstavuje veľkosť kroku, ktorý spraví optimalizátor na upravenie parametrov siete. Tento optimalizačný krok iteratívne opakujeme, kým nám klesá validačná chyba. Gradient descent prispôsobuje parametre podľa všetkých tréningových príkladov.
+Gradient Descent(Gradientový zostup) prispôsobuje parametre našej siete podľa vzorca (\ref{eq:gradient_descent}). Vypočítaním gradientu stratovej funkcie $\frac{\partial L}{\partial w_n}$ získame smer k maximu stratovej funkcie v danom bode, teda s našimi aktualnými parametrami. My sa snažíme dosiahnúť minimum preto naše parametre upravíme v opačnom smere gradientu vynásobený krokom učenia(learning rate) $\eta$. Výpočet gradientov v našej sieti vykonávame pomocou Backpropagation~\cite{backprop} algoritmu, ktorý sa začína výpočtom gradientu pre výstupnú vrstvu a postupne sa propaguje späť až k vstupnej vrstve. V každej vrstve sa vypočítajú gradienty podľa chain rule of calculus, ktorá nám umožňuje vypočítať derivácie zložených funkcií. Konkrétne, gradient stratovej funkcie vzhľadom na váhy a biasy sa vypočítajú ako súčiny derivácií stratovej funkcie vzhľadom na výstup danej vrstvy a derivácií výstupu danej vrstvy vzhľadom na váhy a biasy. Learning rate je jeden z hyperparametrov, ktorý predstavuje veľkosť kroku, ktorý spraví optimalizátor na upravenie parametrov siete. Tento optimalizačný krok iteratívne opakujeme, kým nám klesá validačná chyba. Gradient descent prispôsobuje parametre podľa všetkých tréningových príkladov.
 
 \begin{equation}
-w_{n+1} = w_n - \eta \frac{\partial L}{\partial w} \label{eq:gradient_descent}
+w_{n+1} = w_n - \eta \frac{\partial L}{\partial w_n} \label{eq:gradient_descent}
 \end{equation}
 
-Stochastic gradient descent sa líši od gradient descentu tým, že neupravuje parametre vzhľadom na všetky tréningové príklady, ale len vzhľadom na niekoľko tréningových príkladov, počet týchto tréningových príkladov závisí od ďaľšieho hyperparametra: veľkost batchu. Veľkosť batchu je počet tréningových príkladov použitých v jednej iterácii tréningu. SGD je rýchlejšie a menej výpočtovo náročné, taktiež sa pridáva šum do optimalizačného procesu, čo znižuje šancu, že algoritmus skončí v lokálnom minime. 
+Stochastic gradient descent (SGD) sa líši od Gradient Descentu tým, že neupravuje parametre vzhľadom na všetky tréningové príklady, ale len vzhľadom na niekoľko tréningových príkladov, počet týchto tréningových príkladov závisí od ďaľšieho hyperparametra: veľkost batchu. Veľkosť batchu je počet tréningových príkladov použitých v jednej iterácii tréningu. SGD je rýchlejšie a menej výpočtovo náročné, taktiež sa pridáva šum do optimalizačného procesu, čo znižuje šancu, že algoritmus skončí v lokálnom minime. 
 
 Po trénovaní CNN je dôležité vyhodnotiť výkon na testovacej množine. Testovacia množina by mala byť dostatočne veľká aby nám ponkla spolahlivé vyhodnotenie nášho modelu a nemala by byť použitá pri tréningu. 
 
@@ -118,13 +116,13 @@ Výkon CNN môže byť vyhodnotený pomocou rôznych metrík. Zavisí od úlohy,
 
 \subsubsection{Aktivačné funkcie a regularizácia}
 
-\hspace{\parindent}Za účelom zavedenia nelinearity do siete zvyčajne CNN obsahujú aktivačné funkcie v konvolučných a plne prepojených vrstvách. Najbežnejšou aktivačnou funkciou je Rectified Linear Unit (ReLU), ktorá má formu $f(x) = \textnormal{max}(0, x)$. Používajú sa aj iné aktivačné funkcie ako napríklad sigmoid a tanh. 
+Za účelom zavedenia nelinearity do siete zvyčajne CNN obsahujú aktivačné funkcie v konvolučných a plne prepojených vrstvách. Najbežnejšou aktivačnou funkciou je Rectified Linear Unit (ReLU), ktorá má formu $f(x) = \textnormal{max}(0, x)$. Používajú sa aj iné aktivačné funkcie ako napríklad sigmoid a tanh. 
 
 Overfitting je pretrénovanie siete, to znamená, že náša sieť funguje príliš dobre na tréningových dátach, ale má to negatívny vplyv na výkon siete na nových dátach, ktoré neboli videné pri tréningu. Teda celkový výkon našej siete všeobecne na všetkých dátach sa overfittingom znižuje.
 
 Na prevenciu overfittingu a zlepšenie generalizácie, konvolučné neurónové siete využívajú regularizačné techniky ako napríklad dropout. 
 
-Dropout náhodne dropne(nepoužije) nejaké percento neurónov v sieti počas každej tréningovej iterácie. ako vidíme na obrázku \ref{fig:image303}
+Dropout~\cite{dropout} náhodne nepoužije nejaké percento neurónov v sieti počas každej tréningovej iterácie. ako vidíme na obrázku \ref{fig:image303}
 
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{images/dropout.png}
@@ -140,7 +138,7 @@ Na to aby sme vedeli vyhodnotiť presnosť modelov objektovej detekcie a porovna
 
 V objektovej detekcii, určujeme polohu objektu pomocou bounding boxu (obdĺžnik). A každému bounding boxu priradíme triedu, teda názov objektu v danej lokalite. 
 
-Pre vyhodnotenie porovnávame predikciu nášho modelu s manuálne anotovaným obrázkom. Najprv musíme spočítať počet true positive, false positive a false negative pre každý objekt zvlášť. True positive je správne detegovaný objekt. False positive je ak sme predikovali objekt tam kde nemal byť. False negative je keď sme nedetegovali objekt tam kde mal byť. Pomocou týchto hodnôt vyrátame precision \ref{eq:precision} a recall \ref{eq:recall}
+Pre vyhodnotenie porovnávame predikciu nášho modelu s manuálne anotovaným obrázkom. Najprv musíme spočítať počet true positive, false positive a false negative pre každý objekt zvlášť. True positive je správne detegovaný objekt. False positive je ak sme predikovali objekt tam kde nemal byť. False negative je keď sme nedetegovali objekt tam kde mal byť. Pomocou týchto hodnôt vyrátame precision (\ref{eq:precision}) a recall (\ref{eq:recall})
 
 \begin{equation}
 Precision = \frac{\text{True positive}}{\text{True positive + False positive}} \label{eq:precision}
@@ -150,99 +148,105 @@ Precision = \frac{\text{True positive}}{\text{True positive + False positive}} \
 Recall = \frac{\text{True positive}}{\text{True positive + False negative}} \label{eq:recall}
 \end{equation}
 
-Na určenie, či predikovaný bouning box je dostatočné presný sa používa metrika IoU(intersection over union). Teda plocha prieniku predikcie a anotácie deleno plocha zjednotenia prieniku a anotácie \ref{eq:IoU}. Podľa hodnoty IoU threshold určujeme, či je predikcia true positive alebo false positive. Ak je IoU >= IoU threshold pri konkrétnej preidikcii je to true positive inak je to false positive. 
+Na určenie, či predikovaný bouning box je dostatočné presný sa používa metrika IoU(intersection over union). Teda plocha prieniku predikcie a anotácie deleno plocha zjednotenia prieniku a anotácie (\ref{eq:IoU}). Podľa hodnoty IoU threshold určujeme, či je predikcia true positive alebo false positive. Ak je IoU >= IoU threshold pri konkrétnej preidikcii je to true positive inak je to false positive. 
 
 \begin{equation}
 IoU = \frac{\text{Area of Overlap}}{\text{Area of Union}} \label{eq:IoU}
 \end{equation}
 
-AP50 je precission * recall pri hodnote IoU threshold = 0.5. AP75 je precission * recall pri hodnote IoU threshold = 0.75. Pre výpočet AP musíme vyrátať precision a recall pre rôzne hodnoty IoU threshold. Následne zostrojíme precision recall krivku \ref{fig:image304}. Obsah pod touto krivkou je naše AP.
+Každý predikovaný bounding box obsahuje taktiež confidence score, to je skóre, ktoré popisuje ako veľmi sme si istý, že bounding box obsahuje daný objekt. Confidence threshold je hodnota, ktorá určuje minimálne confidence score na to aby bol predikovaný bounding box označený ako pozitívny. 
 
+Pre výpočet AP musíme vyrátať precision a recall pre rôzne hodnoty confidence threshold z ktorých zostrojíme precision-recall krivku. Obsah pod touto krivkou je naše AP. 
 
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{images/precision_recall_curve.png}
-\centering
-\caption{Krivka precision recall}
-\label{fig:image304}
-\end{figure}
+AP50 je AP pri hodnote IoU threshold = 0.5. AP75 je AP pri hodnote IoU threshold = 0.75.
 
-Pre vyrátanie mAP musíme vyrátať AP pre každú triedu a následne spraviť priemer. Rovnako pre mAP50 a mAP75.
+Hodnotu mAP dostaneme keď spravíme priemer AP pre rôzne IoU thresholdy pre každú triedu zvlášť a následne spravíme priemer týchto výsledkov pre jednotlivé triedy. 
+
+mAP50 je priemer AP50 pre jednotlivé triedy. mAP75 je priemer AP75 pre jednotlivé triedy.
 
 
 \subsubsection{Faster R-CNN}
 
-Jedna z najpoúživanejších metód objektovej detekcie je Faster R-CNN \cite{Faster}. Skladá sa z 3 hlavných častí: Backbone, RPN(Region Proposal Network) a RoI Heads. 
+Jedna z najpoúživanejších metód objektovej detekcie je Faster R-CNN \cite{Faster}. Skladá sa z 3 hlavných častí: Backbone, RPN(Region Proposal Network) a RoI Heads. Jej architektúru vidíme na obrázku \ref{fig:faster}
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{images/Faster.png}
+\centering
+\caption{Architektúra Faster R-CNN}
+\label{fig:faster}
+\end{figure}
+
 
 \subsubsection{Backbone}
 
-Backbone je kľúčovou časťou siete, ktorá zabezpečuje extrakciu príznakov zo vstupného obrázka. Faster R-CNN je pružná sieť, ktorá využíva existujúcu sieťovú architektúru, ako napríklad VGG \cite{VGG}, ResNet \cite{ResNet} alebo Inception, ako backbone na extrakciu príznakov.
+Backbone je kľúčovou časťou siete, ktorá zabezpečuje extrakciu príznakov zo vstupného obrázka. Faster R-CNN je pružná sieť, ktorá využíva existujúcu sieťovú architektúru, ako napríklad VGG~\cite{VGG}, ResNet~\cite{ResNet} alebo Inception~\cite{inception}, ako backbone na extrakciu príznakov.
 
 \subsubsection{RPN}
 
 Výstup z backbone je príznaková mapa, ktorá je vstupom pre RPN. RPN má za úlohu vygenerovať návrhy regiónov, ktoré pravdepodobne obsahujú objekt. Toto RPN dosiahne pomocou pomocou prístupu posúvneho okna a anchor boxov.
 \begin{enumerate}
   \item Anchor boxy: RPN používa množinu preddefinovaných anochor boxov. Anchor boxy sú bounding boxy s pevne stanovenou veľkosťou, ktoré sú husto rozmiestnené po príznakovej mape. Tieto anchor boxy pokrývajú rôzne škály a pomer strán, aby zachytili objekty rôznych veľkostí a tvarov. 
-  \item Prístup s posúvnym oknom: RPN posúva malé okno zväčša 3x3 alebo 1x1 po príznakovej mape, centruje ho v každom bode príznakovej mapy a používa anchor boxy na generovanie návrhov regiónov. Pre každý anchor box v danej lokalite RPN predikuje dve veci: 
+  \item Prístup s posuvným oknom: RPN posúva malé okno zväčša 3x3 alebo 1x1 po príznakovej mape, centruje ho v každom bode príznakovej mapy a používa anchor boxy na generovanie návrhov regiónov.Posuv okna a generovanie návrhov regiónov prebiehajú súčasne pomocou konvolučnej vrstvy. Pre každý anchor box v danej lokalite RPN predikuje dve veci: 
   \begin{enumerate}
   \item Objectness score: RPN predikuje pravdepodobnosť, že anchor box je objekt alebo pozadie. To sa dosiahne použitím binary classification head, ktorej výstup je skóre objektu pre každý anchor box.
   \item Bounding Box Regression: RPN taktiež predikuje súradnice bounding boxu, ktorý tesne obklopuje objekt, ak existuje, spojeného s anchor boxom. To sa dosiahne pomocou bounding box regression head, ktorej výstup sú jemne doladené súradnice návrhu bounding boxu na základe odchýlok od súradníc anchor boxu.
   \end{enumerate}
-  \item Non-Maximum Suppression (NMS): Po získaní Objectness score a Bounding Box Regression predikcií pre všetky anchor boxy RPN aplikuje postup Non-Maximum Suppression (NMS), aby odfiltroval nadbytočné návrhy. NMS je postup, ktorý odstraňuje prekrývajúce sa návrhy, ponecháva iba návrhy s najvyšším Objectness score a odstraňuje duplikáty alebo nadbytočné návrhy.
+  \item Non-Maximum Suppression (NMS): Po získaní Objectness score a Bounding Box Regression predikcií pre všetky anchor boxy RPN aplikuje postup Non-Maximum Suppression (NMS), aby odfiltroval nadbytočné návrhy. NMS je postup, ktorý odstraňuje prekrývajúce sa návrhy, ponecháva iba návrhy s najvyšším Objectness score a odstraňuje duplikáty alebo nadbytočné návrhy. Prekryv návrhov sa určuje pomocou IoU.
   \item Doladenie návrhov: zvyšné návrhy regiónov sú doladené aplikovaním predikovanej bounding box regresie na anchor boxy.  
-  \item Návrhy regiónov: Výstupom RPN je množina regiónov, pričom každý región je charekterizovaný súradnicami, výškou a širkou, taktiež má priradené skóre objektu(Objectness score).
+  \item Návrhy regiónov: Výstupom RPN je množina regiónov, pričom každý región je charekterizovaný súradnicami, výškou a širkou, taktiež má priradené skóre objektu (Objectness score).
 \end{enumerate}
 
 \subsubsection{RoI Heads}
 
-Roi Heads sa skladaju z troch častí: RoI Pooler, Box Head a Box Predictor. Vstupom pre RoI Heads je príznaková mapa(výstup z backbone) a taktiež návrhy regiónov(výstup z RPN).
+Roi Heads sa skladaju z troch častí: RoI Pooler, Box Head a Box Predictor. Vstupom pre RoI Heads je príznaková mapa (výstup z backbone) a taktiež návrhy regiónov (výstup z RPN). RoI (Region of Interest) sú návrhy regiónov, ktoré vygenerovala RPN.
 \begin{enumerate}
-  \item RoI Pooler: Je zodpovedný za zmenšenie rôznych veľkostí a tvarov RoI na jednotnú veľkosť, ktorá je vhodná pre vstup do ďalších častí modelu. RoI(Region of Interest) sú návrhy regiónov, ktoré nám vygenerovala RPN. Vezme návrhy regiónov, ktoré sú rôznych veľkostí a tvarov a pomocou RoI Allign ich transformuje na rovnakú veľkosť, zväčša je to 7x7 alebo 14x14. RoI Aliign je presnejšia alternatíva ako max pooling, ktorá umožňuje interpoláciu hodnôt príznakov na subpixlovú presnosť, čo zlepšuje presnosť zarovnania RoIs na príznakovú mapu. To znamená, že RoI Align dokáže zarovnať RoIs na hodnoty medzi pixelmi na príznakovej mape.
-  \item Box Head: Po RoI Alligne fixné veľkosti reprezentácií príznakov regiónov prechádzajú cez Box Head, ktorá pozostáva z jedného alebo viacerých plne prepojených (FC) vrstiev nasledovaných aktivačnými funkciami. Box Head je zodpovedný za ďalšie doladenie reprezentácií príznakov a generovanie predikcií pre triedy objektov a presnejšie súradnice bounding boxov.
+  \item RoI Pooler: Je zodpovedný za zmenšenie rôznych veľkostí a tvarov RoI na jednotnú veľkosť, ktorá je vhodná pre vstup do ďalších častí modelu. Vezme návrhy regiónov, ktoré sú rôznych veľkostí a tvarov a pomocou RoI Allign ich transformuje na rovnakú veľkosť, zväčša je to 7x7 alebo 14x14. RoI Aliign je presnejšia alternatíva ako max pooling, ktorá umožňuje interpoláciu hodnôt príznakov na subpixlovú presnosť, čo zlepšuje presnosť zarovnania RoIs na príznakovú mapu. To znamená, že RoI Align dokáže zarovnať RoIs na hodnoty medzi pixelmi na príznakovej mape.
+  \item Box Head: Po RoI Alligne fixné veľkosti reprezentácií príznakov regiónov prechádzajú cez Box Head, ktorá pozostáva z jednej alebo viacerých plne prepojených (FC) vrstiev nasledovaných aktivačnými funkciami. Box Head je zodpovedný za ďalšie doladenie reprezentácií príznakov a generovanie predikcií pre triedy objektov a presnejšie súradnice bounding boxov.
   \item Box Predictor: Výstup z Box Head ide do Box Predicotra, ktorý je zodpovedný za predikciu triedy objektu a upravenie súradníc bounding boxu, skladá sa z dvoch častí: 
   \begin{enumerate}
-  \item Box Classifier: Táto časť je zodpovedná za predikciu triedy objektu pre každý RoI. Zvyčajne sa skladá z jedného alebo viacerých plne prepojených (FC) vrstiev, nasledovaných aktivačnou funkciou softmax, ktorá generuje pravdepodobnosti pre rôzne triedy objektov
-  \item Box Regressor: Táto časť je zodpovedná za predikciu presnejších hodnôt bounding boxu pre každý RoI. Zvyčajne sa skladá z jedného alebo viacerých plne prepojených (FC) vrstiev, nasledovaných aktivačnými funkciami ako ReLU alebo sigmoid, ktoré generujú predpovedané posuny pre bounding boxy.
+  \item Box Classifier: Táto časť je zodpovedná za predikciu triedy objektu pre každý RoI. Zvyčajne sa skladá z jedného alebo viacerých plne prepojených (FC) vrstiev, nasledovaných aktivačnou funkciou softmax, ktorá generuje pravdepodobnosti pre rôzne triedy objektov.
+  \item Box Regressor: Táto časť je zodpovedná za predikciu presnejších hodnôt bounding boxu pre každý RoI. Zvyčajne sa skladá z jednej alebo viacerých plne prepojených (FC) vrstiev, nasledovaných aktivačnými funkciami ako ReLU alebo sigmoid, ktoré generujú predpovedané posuny pre bounding boxy.
   \end{enumerate}
 \end{enumerate}
  
 \section{Few-shot object detection(FSOD)}
-\hspace{\parindent}Problémom pri vačšine algoritmov objektovej detekcie je, že vyžadujú veľký dataset anotovaných obrázkov na tréning modelu, čo môže byť drahé a časovo náročné. 
+Problémom pri vačšine algoritmov objektovej detekcie je, že vyžadujú veľký dataset anotovaných obrázkov na tréning modelu, čo môže byť drahé a časovo náročné. 
 
-Few-shot object detection je varianta objektovej detekcie, ktorá sa snaží učiť z malého datasetu. Je to inšpirované few-shot learningom, čo je typ strojového učenia, ktorý sa učí na malých trénovacích dátach. Few-shot learning si získal v posledných rokoch veľa pozornosti, vďaka jeho schopnosti adaptovať sa novým taskom s malým množstvom dát, čo je dôležité v prípade, že nemáme dostatok anotovaných dát. 
+Few-shot object detection je varianta objektovej detekcie, ktorá sa snaží učiť z malého datasetu. Je to inšpirované few-shot learningom, čo je typ strojového učenia, ktorý sa učí na malých trénovacích dátach. Few-shot learning si získal v posledných rokoch veľa pozornosti, vďaka jeho schopnosti adaptovať sa novým úlohám s malým množstvom dát, čo je dôležité v prípade, že nemáme dostatok anotovaných dát. 
 
 Few-shot object detection je náročný problém, pretože model sa musí naučiť chrakteristiky objektov z malého množstva príkladov, čo je náročné vzhľadom na komplexnosť a rôznorodosť objektov. Naviac model musí rozpoznať nové triedy, ktoré neboli videné počas tréningu, čo vyžaduje dobré rozlišovanie medzi odlišnými triedami. 
 
 Napriek náročnosti, je to dôležitý problém, pretože má potenciál výrazne znížiť počet anotovaných dát potrebných na objektovú detekciu. 
 
 \subsection{Prístupy k FSOD}
-\hspace{\parindent}Sú viaceré prístupy, ktoré boli navrhnuté na FSOD, môžu byť zhrnuté do troch hlavných kategórií: meta-learning, transfer learning a augmentácia dát.
+Sú viaceré prístupy, ktoré boli navrhnuté na FSOD, môžu byť zhrnuté do troch hlavných kategórií: meta-learning, transfer learning a augmentácia dát.
 
 \subsubsection{Meta-learning}
-\hspace{\parindent}Meta-learning je prístup, ktorý sa snaží naučiť sa učiť. Sústredí sa na trénovanie modelu, ktorý sa vie rýchlo prispôsobiť novým úlohám iba vďaka veľmi malému počtu obrázkov. Tento prístup zvyčajne zahŕňa trénovanie modelu, ktorý sa vie učiť z malého počtu dát buď použitím vonkajšej pamäti alebo optimalizačného algoritmu. Napríklad Model-Agnostic Meta-Learning (MAML) \cite{finn2017model} algoritmus používa gradientový optimalizačný algoritmus na tréning modelu, ktorý sa vie prispôsobiť novým úlohám malým počtom aktualizácií gradientu. Algoritmus MAML bol aplikovaný na few-shot object detection pri fine-tuningu predtrénovaného modelu na objektovú detekciu na malom počte obrázkov.
+Meta-learning je prístup, ktorý sa snaží naučiť sa učiť. Sústredí sa na trénovanie modelu, ktorý sa vie rýchlo prispôsobiť novým úlohám iba vďaka veľmi malému počtu obrázkov. Tento prístup zvyčajne zahŕňa trénovanie modelu, ktorý sa vie učiť z malého počtu dát buď použitím vonkajšej pamäti alebo optimalizačného algoritmu. Napríklad Model-Agnostic Meta-Learning (MAML) \cite{finn2017model} algoritmus používa gradientový optimalizačný algoritmus na tréning modelu, ktorý sa vie prispôsobiť novým úlohám malým počtom aktualizácií gradientu. Algoritmus MAML bol aplikovaný na few-shot object detection pri fine-tuningu predtrénovaného modelu na objektovú detekciu na malom počte obrázkov.
 
 \subsubsection{Transfer learning}
-\hspace{\parindent}Transfer learning je technika pri ktorej sa využívajú parametre natrénovanej siete z jednej úlohy ako iniciálne parametre pre sieť na novú veľmi podobnú úlohu. Napríklad sieť trénovaná na veľkom datasete obrázkov zvierat by mohla byť použitá ako iniciaálna sieť pre trénovanie siete na rozpoznávanie špecifického typu zvierat ako napríklad plemená psov. Použitím siete s predtrenovanými váhami, sa naša sieť naučí rýchlejšie rozpoznávať plemená psov a stačí na to menej dát.
+Transfer learning je technika pri ktorej sa využívajú parametre natrénovanej siete z jednej úlohy ako iniciálne parametre pre sieť na novú veľmi podobnú úlohu. Napríklad sieť trénovaná na veľkom datasete obrázkov zvierat by mohla byť použitá ako iniciaálna sieť pre trénovanie siete na rozpoznávanie špecifického typu zvierat ako napríklad plemená psov. Použitím siete s predtrenovanými váhami, sa naša sieť naučí rýchlejšie rozpoznávať plemená psov a stačí na to menej dát.
 
 \subsubsection{Augmentácia dát}
-\hspace{\parindent}Prístup augmentácie dát spočíva v rozmnožení malého množstva dát pomocou aplikovania rôznych transformácií. Zvýšením počtu dát, sa model môže naučiť robustnejšie príznaky. Pri augmentácii sa používajú transformácie ako rotácia, škálovanie, zašumenie. Používame transformácie obrazu, ktoré menia obraz, ale nemenia jeho sémantický obsah.
+Prístup augmentácie dát spočíva v rozmnožení malého množstva dát pomocou aplikovania rôznych transformácií. Zvýšením počtu dát, sa model môže naučiť robustnejšie príznaky. Pri augmentácii sa používajú transformácie ako rotácia, škálovanie, zašumenie. Používame transformácie obrazu, ktoré menia obraz, ale nemenia jeho sémantický obsah.
 
 \subsection{Datasety pre vyhodnotenie FSOD}
-\hspace{\parindent}Na vyhodnotenie výkonu FSOD algoritmov, výskumnici používajú verejne dostupné datasety a vyhodnocovacie metriky. Tieto datasety a metriky slúžia na porovnanie výkonu odlišných algoritmov a ich všeobecnosti. Najpoužívanejšie datasety sú: 
+Na vyhodnotenie výkonu FSOD algoritmov, výskumnici používajú verejne dostupné datasety a vyhodnocovacie metriky. Tieto datasety a metriky slúžia na porovnanie výkonu odlišných algoritmov a ich všeobecnosti. Najpoužívanejšie datasety sú: 
 
 COCO dataset \cite{COCO}, ktorý obsahuje 80 tried a viac ako 330 000 anotovaných obrázkov. VOC dataset \cite{VOC}, je to populárny dataset, ktorý obsahuje 20 tried a viac ako 11 000 obrázkov. 
 
-Tieto datasety sú používané ako štandard pre few-shot object detection, vyberie sa z nich niekoľko tried, ktoré sa považuju ako novel classes (triedy s malym počtom anotovaných dát), pre tieto striedy sa použije iba zopár anotovaných obrázkov(few-shot) a zvyšné triedy sa použijú na predtrénovanie modelu. 
+Tieto datasety sú používané ako štandard pre few-shot object detection, vyberie sa z nich niekoľko tried, ktoré sa považuju ako novel classes (triedy s malým počtom anotovaných dát), pre tieto triedy sa použije iba zopár anotovaných obrázkov (few-shot) a zvyšné triedy sa použijú na predtrénovanie modelu. 
 
 \subsection{Aktuálne riešenia FSOD}
-\hspace{\parindent}K FSOD bolo publikovaných viacero článkov, a veľa autorov použilo iné datasety a spôsoby vyhodnotenia ich modely. Preto je náročné ich porovnanie. Avšak, vo všeobecnosti meta-learningové prístupy zvyknú dosahovať lepšie výsledky ako transfer learning alebo prístup augmentácie dát. Hlavne preto, že meta-learningové prístupy sú špeciálne navrhnuté učiť sa z malého počtu príkladov. 
+K FSOD bolo publikovaných viacero článkov, a veľa autorov použilo iné datasety a spôsoby vyhodnotenia ich modely. Preto je náročné ich porovnanie. Avšak, vo všeobecnosti meta-learningové prístupy zvyknú dosahovať lepšie výsledky ako transfer learning alebo prístup augmentácie dát. Hlavne preto, že meta-learningové prístupy sú špeciálne navrhnuté učiť sa z malého počtu príkladov. 
 
-Avšak, je potrebné zmieniť, že výkon few-shot object detection modelu veľmi závisí od konkrétnej implementácie, zvolených dát a zvolených metrík. A taktiež treba brať do úvahy výpočtovú a pamäťovú náročnosť. 
+Avšak, je potrebné zmieniť, že výkon few-shot object detection modelu veľmi závisí od konkrétnej implementácie, zvolených dát a zvolených metrík. A taktiež treba brať do úvahy výpočtovú a pamäťovú náročnosť.
 
 \subsubsection{Frustrantingly simple few-shot object detection}
 
-\hspace{\parindent}Frustrantingly simple few-shot object detection \cite{FSFSODT} je metóda, ktorú sme sa rozhodli použiť v tejto práci. Kľúčová myšlienka za touto metódou je naučiť sa detegovať objekty tréningom na množine základných tried (base classes) s veľkým počtom anotovaných obrázkov a následne spraviť fine-tuning detektora na malom množstve anotovaných obrázkov z nových tried(novel classes). 
+Frustrantingly simple few-shot object detection \cite{FSFSODT} je metóda, ktorú sme sa rozhodli použiť v tejto práci. Kľúčová myšlienka za touto metódou je naučiť sa detegovať objekty tréningom na množine základných tried (base classes) s veľkým počtom anotovaných obrázkov a následne spraviť fine tuning detektora na malom množstve anotovaných obrázkov z nových tried (novel classes). 
 
-Využíva metódu Faster R-CNN, ktorú sme si popísali v predošlej kapitole. Spočíva v tom, že rozdelíme náš tréning na 2 etapy. V prvej etape sa vykoná base tréning na base classes klasicky cez Faster R-CNN pomocou stratovej funkcie \ref{eq:loss_function}. 
+Využíva metódu Faster R-CNN~\cite{Faster} a spočíva v tom, že rozdelíme náš tréning na 2 etapy. V prvej etape sa vykoná base tréning na base classes klasicky cez Faster R-CNN pomocou stratovej funkcie (\ref{eq:loss_function}). 
 
 \begin{equation}
 \mathcal{L} = \mathcal{L}_{rpn} + \mathcal{L}_{cls} + \mathcal{L}_{loc}
@@ -251,7 +255,7 @@ Využíva metódu Faster R-CNN, ktorú sme si popísali v predošlej kapitole. S
 
 Kde $\mathcal{L}_{rpn}$ sa aplikuje na výstup z RPN na rozlíšenie popredia od pozadia, $\mathcal{L}_{cls}$ je cross-entropy loss pre Box Classifier a $\mathcal{L}_{loc}$ je stratová funkcia pre Box Regressor.
 
-Následne v druhej etape tréningu(few-shot fine-tuning) vytvoríme pre každú z tried(novel aj base) malý tréningový set. Pre novel classes priradíme náhodné inicializované váhy do siete pre Box Predictor. A následne robíme fine-tuning, ale len na Box Predictore, poslednej vrstve nášho modelu. Zvyšok siete ostáva zmrazený. Použijeme rovnakú loss funkciu a 20x nižší learning rate.
+Následne v druhej etape tréningu (few-shot fine-tuning) vytvoríme pre každú z tried (novel aj base) malý tréningový set. Pre novel classes priradíme náhodné inicializované váhy do siete pre Box Predictor. A následne robíme fine-tuning, ale len na Box Predictore, poslednej vrstve nášho modelu. Zvyšok siete ostáva zmrazený. Použijeme rovnakú loss funkciu a 20x nižší learning rate.
 
 Na obrázku \ref{fig:image305} vidíme znázornené tieto etapy a v druhej etape vidíme žltou farbou znázornený Box Predictor, jediná časť siete, ktorá počas fine-tuningu nie je zmrazená.
 

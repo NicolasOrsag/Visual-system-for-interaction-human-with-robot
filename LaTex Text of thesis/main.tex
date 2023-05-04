@@ -141,13 +141,22 @@
 % koniec prehlasenia
 
 \chapter*{Poďakovanie}\label{chap:thank_you}
+Rád by som vyjadril úprimnú vďaku tým, ktorí mi pomohli pri dokončení tejto diplomovej práce.
+
+Najprv by som chcel poďakovať svojmu vedúcemu práce, Ing. Viktorovi Kocurovi, PhD., za jeho cenné rady, odborné vedenie a trpezlivosť. Vždy mi bol nápomocný a reagoval veľmi rýchlo, jeho spätnú väzbu so dostával vždy takmer okamžite. 
+
+Rovnako by som chcel poďakovať svojim rodinným príslušníkom a priateľom za ich  podporu a povzbudenie v priebehu celého procesu tvorby tejto práce. Ich podpora bola pre mňa veľmi dôležitá.
+
+Nakoniec by som chcel poďakovať všetkým ľuďom, ktorí mi pomohli priamo alebo nepriamo s touto prácou.
+
+Ešte raz by som sa chcel poďakovať všetkým, ktorí mi pomohli s touto diplomovou prácou. Bez Vášho prínosu by táto práca nebola možná.
 
 \vfill\eject 
 % koniec podakovania
 
 \chapter*{Abstrakt}\label{chap:abstract_sk}
 
-Oblasť interakcie človeka a robota zaznamenala v posledných rokoch výrazný pokrok, pričom humanoidné roboty sa vyvíjajú pre široké spektrum aplikácií. Efektívna interakcia medzi týmito robotmi a ich používateľmi je však stále výzvou. Táto práca predstavuje vizuálny systém interakcie medzi ľudským učiteľom a humanoidným robotom. Systém využíva few-shot object detection algoritmy na učenie sa a rozpoznavanie novych objektov a gest. 
+Oblasť interakcie človeka a robota výrazne pokročila v posledných rokoch, pričom humanoidné roboty sa vyvíjajú pre široké spektrum aplikácií. Efektívna interakcia medzi týmito robotmi a ich používateľmi je však stále výzvou. Táto práca sa zameriava na few-shot algoritmy pre objektovú detekciu, ktoré používajú iba malé množstvo anotovaných dát na tréning, čím minimalizujú náklady a čas potrebné na anotáciu. Skúmame algoritmus Frustratingly Simple Few-Shot Object Detection~\cite{FSFSODT}, testujeme jeho presnosť a rýchlosť pri rôznom počte trénovacích obrázkov na datasete PASCAL VOC~\cite{VOC} a pri rôznom počte nových tried, ktoré sme získali z roboflow~\cite{roboflow}. Výsledkom našej práce je 8-násobné zrýchlenie a výrazné zníženie pamäťovej náročnosti algoritmu na GPU, pri zachovaní rovnakej presnosti. Nakoniec sme náš zrýchlený algoritmus otestovali na snímkoch z kamery robota NICO, kde sme dosiahli presnosť AP50 = 18.182.
 
 ~\\
 Kľúčové slová: Počítačové videnie, Humanoidný robot, Hlboké učenie, Konvolučné neurónové siete, Few-shot object detection 
@@ -155,7 +164,7 @@ Kľúčové slová: Počítačové videnie, Humanoidný robot, Hlboké učenie, 
 
 \chapter*{Abstract}\label{chap:abstract_en}
 
-The field of human-robot interaction has seen significant progress in recent years, with humanoid robots being developed for a wide range of applications. However, effective interaction between these robots and their human users is still a challenge. This thesis presents a visual system for interaction between a human teacher and a humanoid robot. The system uses few-shot object detection algorithms for learning and recognising new objects and gestures.
+The field of human-robot interaction has made significant progress in recent years, with humanoid robots being developed for a wide range of applications. However, effective interaction between these robots and their users remains a challenge. This work focuses on few-shot algorithms for object detection, which use only a small amount of annotated data for training, thus minimizing the costs and time required for annotation. We explore the Frustratingly Simple Few-Shot Object Detection~\cite{FSFSODT} algorithm, test its accuracy and speed with varying numbers of training images on the PASCAL VOC~\cite{VOC} dataset and with varying numbers of new classes obtained from roboflow~\cite{roboflow}. The result of our work is an 8-fold speedup and significant reduction in the algorithm's memory requirements on the GPU, while maintaining the same accuracy. Finally, we tested our accelerated algorithm on images from the NICO robot's camera, achieving an mAP50 accuracy of 18.182.
 
 ~\\
 Keywords: Computer vision, Humanoid robot, Deep learning, Convolutional neural networks, Few-shot object detection 
@@ -168,12 +177,13 @@ Keywords: Computer vision, Humanoid robot, Deep learning, Convolutional neural n
 
 % treba este prejst dokument ci je kod spravne formatovany
 \input 01intro.tex
-\input 02motivation.tex
+% \input 02motivation.tex
 \input 03issues_overview.tex
 \input 04previous_solutions.tex
 \input 05proposal.tex
 \input 06implementation.tex
-% \input 07results.tex
+\input 07results.tex
+\input 09discusion.tex
 \input 08conclusion.tex
 
 \backmatter

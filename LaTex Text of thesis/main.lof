@@ -1,64 +1,66 @@
 \babel@toc {slovak}{}\relax 
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Konkrétny príklad aplikácie filtra na vstup\relax }}{8}{figure.caption.12}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Znázornenie paddingu pri konvolúcii\relax }}{9}{figure.caption.13}%
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Aplikácia dropoutu\relax }}{14}{figure.caption.18}%
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Architektúra Faster R-CNN\relax }}{16}{figure.caption.21}%
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Model pre frustrantingly simple few shot object detector\relax }}{23}{figure.caption.29}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Príklady anotovaných obrázkov pre triedu apple\relax }}{26}{figure.caption.30}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces AP50 na testovacích dátach pre jednotlivé triedy pre 1-shot detekciu.\relax }}{28}{figure.caption.31}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Graf presností na testovacích dátach pre 1-shot detekciu.\relax }}{29}{figure.caption.32}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces AP50 na testovacích dátach pre jednotlivé triedy pre 2-shot detekciu.\relax }}{30}{figure.caption.34}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Graf presností na testovacích dátach pre 2-shot detekciu.\relax }}{30}{figure.caption.35}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces AP50 na testovacích dátach pre jednotlivé triedy pre 3-shot detekciu.\relax }}{31}{figure.caption.37}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Graf presností na testovacích dátach pre 3-shot detekciu.\relax }}{32}{figure.caption.38}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces AP50 na testovacích dátach pre jednotlivé triedy pre 5-shot detekciu.\relax }}{33}{figure.caption.40}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Graf presností na testovacích dátach pre 5-shot detekciu.\relax }}{33}{figure.caption.41}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces AP50 na testovacích dátach pre jednotlivé triedy pre 10-shot detekciu.\relax }}{34}{figure.caption.43}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Graf presností na testovacích dátach pre 10-shot detekciu.\relax }}{35}{figure.caption.44}%
+\contentsline {figure}{\numberline {2.12}{\ignorespaces AP50 na testovacích dátach pre jednotlivé triedy pre 15-shot detekciu.\relax }}{36}{figure.caption.46}%
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Graf presností na testovacích dátach pre 15-shot detekciu.\relax }}{36}{figure.caption.47}%
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Novel AP50 na testovacích dátach vzhľadom k počtu trénovacích obrázkov.\relax }}{37}{figure.caption.49}%
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Čas tréningu vzľadom k počtu trénovacích obrázkov.\relax }}{38}{figure.caption.50}%
+\contentsline {figure}{\numberline {2.16}{\ignorespaces Najnižia AP50 na testovacích dátach vzhľadom k počtu trénovacích obrázkov.\relax }}{39}{figure.caption.51}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Aplikácia filtra\relax }}{8}{figure.caption.11}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Znázornenie paddingu pri konvolúcii\relax }}{9}{figure.caption.12}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Aplikácia dropoutu\relax }}{14}{figure.caption.17}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Krivka precision recall\relax }}{16}{figure.caption.19}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Model pre frustrantingly simple few shot object detector\relax }}{23}{figure.caption.28}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Celková strata počas 1-shot fine tuningu\relax }}{41}{figure.caption.52}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Porovnanie mAP50 na testovacích dátach 5 min. tréningu s plným tréningom.\relax }}{42}{figure.caption.54}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Porovnanie mAP50 na testovacích dátach 20 min. tréningu s plným tréningom\relax }}{43}{figure.caption.56}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Porovnanie presností pôvodného a zrýchleného algoritmu pomocou zapamätania výstupu z Backbone a prispôsobenia obrázkov na rovnakú veľkosť\relax }}{46}{figure.caption.60}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Porovnanie presnosti pri batch size = 1 a batch size = 2´\relax }}{47}{figure.caption.62}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Graf porovnania mAP50 na testovacích dátach pôvodného algoritmu a 1. pokusu o zrýchlenie pri batch size = 1.\relax }}{49}{figure.caption.65}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Graf porovnania mAP50 na testovacích dátach pôvodného algoritmu a 2. pokusu o zrýchlenie pri batch size = 1.\relax }}{50}{figure.caption.68}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Graf porovnania mAP50 na testovacích dátach pôvodného a zrýchleného algoritmu.\relax }}{51}{figure.caption.70}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Porovnanie presnosti na testovacích dátach a dĺžky tréningu rôznych batch size.\relax }}{53}{figure.caption.72}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Porovnanie rýchlostí pôvodného algoritmu a algoritmu po zrýchlení\relax }}{54}{figure.caption.74}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces AP50 pre jednotlivé triedy\relax }}{28}{figure.caption.30}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Tabuľka presnosti pre všetky triedy\relax }}{28}{figure.caption.31}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Celková presnosť pre všetky triedy\relax }}{29}{figure.caption.32}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces AP50 pre jednotlivé triedy\relax }}{29}{figure.caption.34}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Tabuľka presnosti pre všetky triedy\relax }}{30}{figure.caption.35}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Celková presnosť pre všetky triedy\relax }}{30}{figure.caption.36}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces AP50 pre jednotlivé triedy\relax }}{31}{figure.caption.38}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Tabuľka presnosti pre všetky triedy\relax }}{32}{figure.caption.39}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Celková presnosť pre všetky triedy\relax }}{32}{figure.caption.40}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces AP50 pre jednotlivé triedy\relax }}{33}{figure.caption.42}%
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Tabuľka presnosti pre všetky triedy\relax }}{33}{figure.caption.43}%
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Celková presnosť pre všetky triedy\relax }}{34}{figure.caption.44}%
-\contentsline {figure}{\numberline {4.13}{\ignorespaces AP50 pre jednotlivé triedy\relax }}{35}{figure.caption.46}%
-\contentsline {figure}{\numberline {4.14}{\ignorespaces Tabuľka presnosti pre všetky triedy\relax }}{35}{figure.caption.47}%
-\contentsline {figure}{\numberline {4.15}{\ignorespaces Celková presnosť pre všetky triedy\relax }}{36}{figure.caption.48}%
-\contentsline {figure}{\numberline {4.16}{\ignorespaces AP50 pre jednotlivé triedy\relax }}{37}{figure.caption.50}%
-\contentsline {figure}{\numberline {4.17}{\ignorespaces Tabuľka presnosti pre všetky triedy\relax }}{37}{figure.caption.51}%
-\contentsline {figure}{\numberline {4.18}{\ignorespaces Celková presnosť pre všetky triedy\relax }}{38}{figure.caption.52}%
-\contentsline {figure}{\numberline {4.19}{\ignorespaces Novel AP50 vzhľadom k počtu trénovacích obrázkov\relax }}{39}{figure.caption.53}%
-\contentsline {figure}{\numberline {4.20}{\ignorespaces Čas tréningu vzľadom k počtu trénovacích obrázkov\relax }}{40}{figure.caption.54}%
-\contentsline {figure}{\numberline {4.21}{\ignorespaces Najnižia AP50 vzhľadom k počtu trénovacích obrázkov\relax }}{40}{figure.caption.55}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Príklady anotovaných obrázkov pre triedu zebra\relax }}{57}{figure.caption.76}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Príklady anotovaných obrázkov pre triedu pomaranč\relax }}{57}{figure.caption.77}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Príklady anotovaných obrázkov pre triedu nákladné vozdilo\relax }}{58}{figure.caption.78}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Príklady anotovaných obrázkov pre triedu medveď\relax }}{58}{figure.caption.79}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Graf presností na testovacích dátach pre 10 novel tried + 15 base tried pri 10-shot detekcii.\relax }}{59}{figure.caption.80}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces AP50 na testovacích dátach pre 10 novel tried pri 10-shot detekcii\relax }}{59}{figure.caption.81}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Príklady anotovaných obrázkov pre triedu žirafa\relax }}{60}{figure.caption.84}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Príklady anotovaných obrázkov pre triedu dážnik\relax }}{61}{figure.caption.85}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Príklady anotovaných obrázkov pre triedu futbalová lopta\relax }}{61}{figure.caption.86}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Príklady anotovaných obrázkov pre triedu basebalová pálka\relax }}{62}{figure.caption.87}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Príklady anotovaných obrázkov pre triedu vydlička\relax }}{62}{figure.caption.88}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Graf presností na testovacích dátach pre 15 novel tried + 15 base tried pri 10-shot detekcii.\relax }}{63}{figure.caption.89}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces AP50 na testovacích dátach pre 15 novel tried pri 10-shot detekcii.\relax }}{63}{figure.caption.90}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Príklady anotovaných obrázkov pre triedu nôž\relax }}{64}{figure.caption.93}%
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Príklady anotovaných obrázkov pre triedu banán\relax }}{65}{figure.caption.94}%
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Príklady anotovaných obrázkov pre triedu mrkva\relax }}{65}{figure.caption.95}%
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Príklady anotovaných obrázkov pre triedu hotdog\relax }}{66}{figure.caption.96}%
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Príklady anotovaných obrázkov pre triedu počítačová myš\relax }}{66}{figure.caption.97}%
+\contentsline {figure}{\numberline {4.19}{\ignorespaces Graf presností na testovacích dátach pre 20 novel tried + 15 base tried pri 10-shot detekcii.\relax }}{67}{figure.caption.98}%
+\contentsline {figure}{\numberline {4.20}{\ignorespaces AP50 na testovacích dátach pre 20 novel tried pri 10-shot detekcii.\relax }}{68}{figure.caption.99}%
+\contentsline {figure}{\numberline {4.21}{\ignorespaces Porovnanie presnoti na testovacích dátach 10-shot detekcie s 20 novel triedami + 15 base triedami s pôvodným a dvojnásobným počtom iterácii\relax }}{69}{figure.caption.101}%
+\contentsline {figure}{\numberline {4.22}{\ignorespaces Presnosť 10-shot detekcie na testovacích dátach vzhľadom k počtu novel tried\relax }}{70}{figure.caption.103}%
+\contentsline {figure}{\numberline {4.23}{\ignorespaces Graf porovnania presnosti na testovacích dátach pre fine-tuning bez a s base triedami pri 10-shot detekcii\relax }}{71}{figure.caption.104}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Celková strata počas tréningu\relax }}{43}{figure.caption.56}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Výsledná tabuľka po 5tich minútach tréningu\relax }}{44}{figure.caption.57}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Porovnanie 5min tréningu s plným tréningom\relax }}{44}{figure.caption.58}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Výsledná tabuľka po 20tich minútach tréningu\relax }}{45}{figure.caption.59}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Porovnanie 20min tréningu s plným tréningom\relax }}{46}{figure.caption.60}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Výsledok pre prispôsobené obrázky na rovnakú veľkosť\relax }}{49}{figure.caption.63}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Výsledok pre prispôsobené obrázky na rovnakú veľkosť\relax }}{49}{figure.caption.64}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Porovnanie rôznych batch size\relax }}{50}{figure.caption.66}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Výsledok 1. pokusu\relax }}{52}{figure.caption.68}%
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Graf porovnania mAP50 pôvodného algoritmu a 1. pokusu o zrýchlenie\relax }}{52}{figure.caption.69}%
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Výsledok 2. pokusu\relax }}{53}{figure.caption.71}%
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Graf porovnania mAP50 pôvodného algoritmu a 2. pokusu o zrýchlenie\relax }}{54}{figure.caption.72}%
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Výsledok 3. pokusu\relax }}{55}{figure.caption.74}%
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Graf porovnania mAP50 pôvodného algoritmu a 3. pokusu o zrýchlenie\relax }}{55}{figure.caption.75}%
-\contentsline {figure}{\numberline {5.15}{\ignorespaces Výsledok zrýchleného algoritmu\relax }}{56}{figure.caption.76}%
-\contentsline {figure}{\numberline {5.16}{\ignorespaces Graf porovnania mAP50 pôvodného a zrýchleného algoritmu\relax }}{57}{figure.caption.77}%
-\contentsline {figure}{\numberline {5.17}{\ignorespaces Porovnanie rýchlostí pôvodného algoritmu a algoritmu po zrýchlení\relax }}{58}{figure.caption.79}%
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Tabuľka presností pre 10 novel tried\relax }}{61}{figure.caption.81}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Graf presností pre 10 novel tried\relax }}{61}{figure.caption.82}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces AP50 pre jednotlivé triedy\relax }}{62}{figure.caption.83}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Tabuľka presností pre 15 novel tried\relax }}{63}{figure.caption.85}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Graf presností pre 15 novel tried\relax }}{63}{figure.caption.86}%
-\contentsline {figure}{\numberline {6.6}{\ignorespaces AP50 pre jednotlivé triedy\relax }}{64}{figure.caption.87}%
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Tabuľka presností pre 20 novel tried\relax }}{65}{figure.caption.89}%
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Graf presností pre 20 novel tried\relax }}{65}{figure.caption.90}%
-\contentsline {figure}{\numberline {6.9}{\ignorespaces AP50 pre jednotlivé triedy\relax }}{66}{figure.caption.91}%
-\contentsline {figure}{\numberline {6.10}{\ignorespaces Graf presností pre 20 novel tried\relax }}{67}{figure.caption.92}%
-\contentsline {figure}{\numberline {6.11}{\ignorespaces Presnosť vzhľadom k počtu novel tried\relax }}{68}{figure.caption.94}%
-\contentsline {figure}{\numberline {6.12}{\ignorespaces Tabuľka porovnania presnosti pre fine-tuning bez a s base triedami\relax }}{69}{figure.caption.95}%
-\contentsline {figure}{\numberline {6.13}{\ignorespaces Graf porovnania presnosti pre fine-tuning bez a s base triedami\relax }}{69}{figure.caption.96}%
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Príklad trénovacích obrázkov z kamery robota NICO.\relax }}{74}{figure.caption.106}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Príklad úspešných detekcii testovacích obrázkov z kamery robota NICO.\relax }}{75}{figure.caption.107}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Príklad neúspešných detekcii testovacích obrázkov z kamery robota NICO.\relax }}{76}{figure.caption.108}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Príklad trénovacích obrázkov z kamery robota NICO zbavených skreslenia.\relax }}{79}{figure.caption.111}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Príklad úspešných detekcii testovacích obrázkov z kamery robota NICO zbavených skreslenia.\relax }}{80}{figure.caption.112}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Príklad neúspešných detekcií testovacích obrázkov z kamery robota NICO zbavených skreslenia.\relax }}{81}{figure.caption.113}%

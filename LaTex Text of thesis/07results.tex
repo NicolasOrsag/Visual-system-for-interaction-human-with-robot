@@ -1,64 +1,119 @@
-\chapter{Výskum a výsledky}\label{chap:results}
-V tejto kapitole sa budeme venovať metódam a postupom vykonávania výskumu pre našu diplomovú prácu, vďaka ktorým sme sa dopracovali k finálnemu riešeniu našej práce. 
+\chapter{Testovanie tréningu modelu pre detekciu objektov pomocou kamery robota NICO}\label{chap:results}
 
-Ako prvé preskúmame few-shot object detection algoritmy a vyskúšame ako fungujú v praxi a ako ich môžme využiť v našej práci na učenie nových objektov a gest vďaka malému počtu anotovaných obrázkov. 
+V tejto kapitole vyskúšame natrénovať model pre detekciu mandarinky na záberoch z kamery robota NICO pomocou nášho zrýchleného algoritmu.
 
-Preskúmal som dva prístupy:  Frustrantingly simple few shot object detection \cite{wang2020frustratingly}, Meta faster r-cnn: Towards accurate few-shot object detection with attentive feature alignment \cite{han2022meta}
+\section{Testovanie na pôvodných snímkoch z kamery}
 
-Pri testovaní druhého spomínaného prístupu som zistil, že je príliš pamäťovo náročný a nebol som schopný ani po stiahnutí predtrénovaných modelov po prvých dvoch krokoch: meta-training, training base classes detection head, vykonať posledný pre mňa najôležitejší krok ktorý závisel na nových few-shot triedach (novel classes) fine-tuning. Moja grafická karta nemala dostatočnú pamäť 8GB a skúšal som to aj na virtual machine s grafickou kartou nvidia T4 16GB. 
+Nafotili sme približne 150 obrázkov obsahujúcich mandarinku pomocou kamery lavého oka robota NICO. Nafotené obrázky boli však rôznej kvality a veľa z nich bolo veľmi nekvalitných a zašumených. Tak sme vybrali 40 najlepších záberov na tréning a vyhodnotenie modelu. Obrázky anotujeme pomocou knižnice \texttt{labelImg} \cite{labelImg}.
 
-Autori trénovali model na 4 20GB GPU. A ja som dostal nasledovný výstup aj po úprave trénovacích parametrov ako batch size, learning rate, tak aby stačilo čo najmenej pamäte: 
+Model budeme trénovať pomocou 10-shot fine tuningu. Použijeme 10 obrázkov na tréning a zvyšných 30 na testovanie modelu. Náš model budeme trénovať iba na jednej triede pre maximalizáciu presnosti. Skúšal som rôzne parametre pre learning rate, batch size a počet iterácií, no najvyššiu presnosť som dosiahol pre batch size = 8, learning rate = 0.0005, počet iterácií = 8 000 a step = 7 200 (počet iterácií po ktorých sa learning rate desaťnásobne zníži). 
+
+Na obrázku \ref{fig:image700} vidíme príklady trénovacích obrázkov, na obrázku \ref{fig:image701} vidíme príklady úspešných detekcií na testovacích obrázkoch, na obrázku \ref{fig:image702} vidíme príklady neúspešných detekcií na testovacích obrázkoch, v tabuľke \ref{tab:table700} vidíme výslednú presnosť nášho modelu a v tabuľke \ref{tab:table702} vidíme jadnoduchšiu presnosť pre lepšiu interpretáciu, pri confidence threshold = 0.5. Pri znížení confidence threshold sme nedostali viac správnych detekcií len sa nám zvyšova počet nesprávnych. 
 
 \begin{figure}[H]
-\includegraphics{images/no_memory.png}
+\includegraphics[width=\textwidth]{images/2023-04-17-140320_1.jpg}
+\includegraphics[width=\textwidth]{images/2023-04-17-140935_99.jpg}
 \centering
-\caption{Výstup pri fine-tuningu pomocou Meta Faster-RCNN}
-\label{fig:image}
+\caption{Príklad trénovacích obrázkov z kamery robota NICO.}
+\label{fig:image700}
 \end{figure}
-
-Avšak Frustrantingly simple few-shot object detection prístup sa mi podarilo vyskúšať a otestovať, a po prispôsobení trénovacích parametrov k mojej obmedzenej pamäťovej kapacite som bol schopný spustiť všetky fázy tréningu. 
-
-\section{Testovanie Frustrantingly simple few-shot object detection}
-
-\subsubsection{Dataset:}
-Pri few-shot object detection, potrebujeme mať dataset rozdelený na triedy ku ktorým máme veľké množstvo anotovaných dát(base classes), a na triedy ku ktorým máme malé množstvo anotovaných dát(novel classes).
-
-Ako dataset som použil pascal voc, ako base classes som použil triedy:
-aeroplane, bicycle, boat, bottle, car, cat, chair, diningtable, dog, horse, person, pottedplant, sheep,
-train, tvmonitor.
-
-Ako novel classes som použil triedy z pascal voc:
-bird, bus, cow, motorbike, sofa a taktiež som pridal jednu vlastnu triedu apple(kde som anotoval 85
-obrazkov pomocou labelImg), na trening(v druhej fáze pri finetuningu) bolo použitých len 5
-obrázkov z každej triedy, ostatné boli použité na testovanie
-
-Pre každú triedu som vytvoril 5-shot split, vybral som 5 obrázkov pre každú triedu pre fine-tuning.
-
-\subsubsection{Tréning:}
-Najprv som si stiahol predtrénovaný base model, ktorý bol trénovaný čisto iba na 15 base classes.
-Následne som náhodne inicializoval váhy pre novel classes v poslednej vrstve modelu. A potom
-som spustil finetuning poslednej vrstvy modelu.
-
-Pri fine-tuningu som použil tieto paremetre:
 
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{images/Training_parameters.png}
-\caption{Tréningové parametre pri fine-tuningu}
-\label{fig:image}
+\includegraphics[width=\textwidth]{images/detections_screenshot1.png}
+\includegraphics[width=\textwidth]{images/detections_screenshot2.png}
+\centering
+\caption{Príklad úspešných detekcii testovacích obrázkov z kamery robota NICO.}
+\label{fig:image701}
 \end{figure}
-
-\subsubsection{Vyhodnotenie:}
 
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{images/eval1.png}
-\includegraphics[width=\textwidth]{images/eval2.png}
-\includegraphics[width=\textwidth]{images/eval3.png}
-\includegraphics[width=\textwidth]{images/eval4.png}
-\caption{Výsledky tréningu}
-\label{fig:image}
+\includegraphics[width=\textwidth]{images/2023-04-17-140935_8.jpg}
+\includegraphics[width=\textwidth]{images/2023-04-17-140334_38.jpg}
+\centering
+\caption{Príklad neúspešných detekcii testovacích obrázkov z kamery robota NICO.}
+\label{fig:image702}
 \end{figure}
 
+\begin{table}[H]
+\begin{tabular}{|l|c|c|c|}
+\hline
+\textbf{Trieda} & \textbf{mAP} & \textbf{AP50} & \textbf{AP75} \\
+\hline
+Mandarinka & 14.545 & 18.182 & 18.182 \\
+\hline
+\end{tabular}
+\centering
+\caption{Tabuľka presností na testovacích dátach pri detekcií mandarinky pomocou snímok z kamery robota NICO.}
+\label{tab:table700}
+\end{table}
 
-Ako vidíme hodnoty pre base classes nám ostali vysoké, a pri novel classes sa napriek tomu, že sme mali na tréning len 5 vzoriek a testovacia množina bola veľmi variabilná tak sme dostali mAP50 u každej novel class nad 30. 
+\begin{table}[H]
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Trieda} & \textbf{Počet obrázkov} & \textbf{Úspešné} & \textbf{Neúspešné} &  \textbf{Nedetegované}\\
+\hline
+Mandarinka & 30 & 4 & 0 & 26 \\
+\hline
+\end{tabular}
+\centering
+\caption{Tabuľka jednoduchšej presnosti na testovacích dátach pri detekcií mandarinky pomocou snímok z kamery robota NICO pri confidence threshold = 0.5.}
+\label{tab:table702}
+\end{table}
 
-Avšak myslel som si, že fine-tuning bude prebiehať veľmi rýchlo, keďže prebieha len na zopár obrázkoch z každej triedy a robot sa bude môcť učiť v real-time nové objekty, ale len samotný fine-tuning pri 5-shot trval na mojom GPU 5 hodín. Takže na učenie objektov v real-time sa to nebude dať použiť. Ale bude sa to dať použiť na učenie nových gest aj objektov, len pomocou zopár anotácií. 
+\section{Testovanie na snímkoch z kamery zbavených skreslenia}
+
+Ako vidíme naša presnosť, nie je príliš vysoká, za čo zrejmä môže aj nižšia kvalita našich obrázkov. Teraz vyskúšame natrénovať a vyhodnotiť model na obrázkoch bez skreslenia. Na zbavenia sa skreslenia použijeme knižnicu \texttt{planar\_nico\_vision} \cite{planarNicoVision}. Po odstránení skreslenia, sme na niektorých obrázkoch odrezali taktiež mandarinku. Takže sa náš dataset kvalitných obrázkov zredukoval na 30. Rozdelíme teda dataset na 10 trénovacích a 20 testovacích obrázkov. 
+
+Na obrázku \ref{fig:image703} vidíme príklady trénovacích obrázkov, na obrázku \ref{fig:image704} vidíme príklady úspešných detekcií na testovacích obrázkoch, na obrázku \ref{fig:image705} vidíme príklady neúspešných detekcií na testovacích obrázkoch, v tabuľke \ref{tab:table701} vidíme výslednú presnosť nášho modelu a v tabuľke \ref{tab:table703} vidíme jednoduchšiu presnosť nášho modelu pre lepšiu interpretáciu, pri confidence threshold = 0.1. Naša presnosť bola taká nízka, že sme museli zížiť confidence threshold aby sme dostali aspoň nejaké správne detekcie.
+
+Vidíme, že zbavenie skreslenia nám nepomohlo a dosahujeme ešte nižšiu presnosť ako z pôvodných, neupravených snimkov. 
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{images/2023-04-17-140334_41_clean.jpg}
+\includegraphics[width=\textwidth]{images/2023-04-17-140935_2_clean.jpg}
+\centering
+\caption{Príklad trénovacích obrázkov z kamery robota NICO zbavených skreslenia.}
+\label{fig:image703}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{images/detections_screenshot_clean1.png}
+\includegraphics[width=\textwidth]{images/detections_screenshot_clean2.png}
+\centering
+\caption{Príklad úspešných detekcii testovacích obrázkov z kamery robota NICO zbavených skreslenia.}
+\label{fig:image704}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{images/detections_screenshot_clean_wrong1.png}
+\includegraphics[width=\textwidth]{images/detections_screenshot_clean_wrong2.png}
+\centering
+\caption{Príklad neúspešných detekcií testovacích obrázkov z kamery robota NICO zbavených skreslenia.}
+\label{fig:image705}
+\end{figure}
+
+\begin{table}[H]
+\begin{tabular}{|l|c|c|c|}
+\hline
+\textbf{Trieda} & \textbf{mAP} & \textbf{AP50} & \textbf{AP75} \\
+\hline
+Mandarinka & 2.545 & 4.848 & 3.030 \\
+\hline
+\end{tabular}
+\centering
+\caption{Tabuľka presností na testovacích dátach pri detekcií mandarinky pomocou snímok z kamery robota NICO zbavených skreslenia.}
+\label{tab:table701}
+\end{table}
+
+\begin{table}[H]
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Trieda} & \textbf{Počet obrázkov} & \textbf{Úspešné} & \textbf{Neúspešné} &  \textbf{Nedetegované}\\
+\hline
+Mandarinka & 20 & 2 & 7 & 18\\
+\hline
+\end{tabular}
+\centering
+\caption{Tabuľka jednoduchšej presnosti na testovacích dátach pri detekcií mandarinky pomocou snímok z kamery robota NICO zbavených skreslenia.}
+\label{tab:table703}
+\end{table}
