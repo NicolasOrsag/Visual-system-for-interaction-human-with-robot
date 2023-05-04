@@ -7,12 +7,49 @@ import xml.etree.ElementTree as ET
 import numpy as np
 from fsdet.utils.file_io import PathManager
 
-VOC_CLASSES = ['aeroplane', 'Apple', 'bicycle', 'bird', 'boat', 'bottle', 'bus', 'car',
-               'cat', 'chair', 'cow', 'diningtable', 'dog', 'horse',
-               'motorbike', 'person', 'pottedplant', 'sheep', 'sofa', 'train',
-               'tvmonitor', 'Zebra', 'orange', 'truck', 'Bears', 'Giraffe',
-               'umbrella', 'football', 'baton', 'forks', 'knife', 'banana',
-               'carrot', 'Hotdogs-detect', 'computermouse']  # fmt: skip
+VOC_CLASSES = [
+        "aeroplane",
+        "bicycle",
+        "boat",
+        "bottle",
+        "car",
+        "cat",
+        "chair",
+        "diningtable",
+        "dog",
+        "horse",
+        "person",
+        "pottedplant",
+        "sheep",
+        "train",
+        "tvmonitor",
+        "bird",
+        "bus",
+        "cow",
+        "motorbike",
+        "sofa",
+        "Apple",
+        'Zebra',
+        'orange',
+        'truck',
+        'Bears',
+        'Giraffe',
+        'umbrella',
+        'football',
+        'baton',
+        'forks',
+        'knife',
+        'banana',
+        'carrot',
+        'Hotdogs-detect',
+        'computermouse',
+        "Tangerine",
+        "Tea",
+        "Ball",
+        "TEA",
+        "TANGERINE",
+        "BALL"
+    ]  # fmt: skip
 
 
 def parse_args():
@@ -33,7 +70,7 @@ def generate_seeds(args):
             fileids = np.loadtxt(f, dtype=str).tolist()
         data.extend(fileids)
     for fileid in data:
-        year = "2012" if "_" in fileid and "r" not in fileid else "2007"
+        year = "2012" if "_" in fileid and "r" not in fileid and "-" not in fileid else "2007"
         dirname = os.path.join("", "VOC{}".format(year))
         anno_file = os.path.join(dirname, "Annotations", fileid + ".xml")
         tree = ET.parse(anno_file)

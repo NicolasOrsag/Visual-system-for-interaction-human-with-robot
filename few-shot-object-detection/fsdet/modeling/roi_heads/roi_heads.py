@@ -450,7 +450,6 @@ class StandardROIHeads(ROIHeads):
                 del targets
                 features_list = [features[f] for f in self.in_features]
                 self._forward_box(name, features_list, proposals, True, False)
-                # return proposals, losses
             else:
                 proposals = []
                 for i in name:
@@ -490,7 +489,6 @@ class StandardROIHeads(ROIHeads):
             In training, a dict of losses.
             In inference, a list of `Instances`, the predicted instances.
         """
-
         if skip:
             box_features_list = []
             for i in name:
@@ -509,14 +507,11 @@ class StandardROIHeads(ROIHeads):
                 self.smooth_l1_beta,
             )
             return outputs.losses()
-
         else:
-
             box_features = self.box_pooler(
                 features, [x.proposal_boxes for x in proposals]
             )
             box_features = self.box_head(box_features)
-            # print(box_features.shape)
 
             if save:
                 box_features_path = "box_features/" + name + ".pt"

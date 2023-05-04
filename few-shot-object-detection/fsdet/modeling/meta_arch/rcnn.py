@@ -1,4 +1,5 @@
 import logging
+import random
 
 import torch
 from detectron2.modeling.backbone import build_backbone
@@ -51,24 +52,12 @@ class GeneralizedRCNN(nn.Module):
         self.normalizer = lambda x: (x - pixel_mean) / pixel_std
         self.to(self.device)
 
-        self.features = {}
         self.freeze = False
-
-        self.max_size = [0, 0]
-
-        self.min_widths = set()
 
         self.saved_images = set()
 
-        self.freeze2 = False
-
-        self.saved_images2 = set()
-
-        self.num_classes = cfg.MODEL.ROI_HEADS.NUM_CLASSES
-
         if cfg.MODEL.BACKBONE.FREEZE:
-            # self.freeze = True
-            self.freeze2 = True
+            self.freeze = True
             for p in self.backbone.parameters():
                 p.requires_grad = False
             print("froze backbone parameters")
@@ -109,9 +98,6 @@ class GeneralizedRCNN(nn.Module):
         if not self.training:
             return self.inference(batched_inputs)
         images = self.preprocess_image(batched_inputs)
-        # print(images.tensor[0].shape)
-        # self.min_widths.add(images.tensor.shape[3])
-        # print(self.min_widths)
 
         if "instances" in batched_inputs[0]:
             gt_instances = [
@@ -129,66 +115,19 @@ class GeneralizedRCNN(nn.Module):
         else:
             gt_instances = None
 
-        # if self.freeze:
-        #     # if len(batched_inputs == 1):
-        #     #     if batched_inputs[0]["image_id"] not in self.features:
-        #     #         features = self.backbone(images.tensor[0].unsqueeze(0))
-        #     #             self.features[batched_inputs[0]["image_id"]] = features
-        #     # min_width = str(images.tensor[0].shape[1])
-        #     # name = batched_inputs[0]["image_id"] + "_" + min_width
-        #     # features_path = "features/" + name + ".pt"
-        #     # if name not in self.saved_images:
-        #     #     features = self.backbone(images.tensor[0].unsqueeze(0))
-        #     #     self.saved_images.add(name)
-        #     #     torch.save(features, features_path)
-        #     # else:
-        #     #     features = torch.load(features_path)
-        #
-        #     for i in range(len(batched_inputs)):
-        #         min_width = str(images.tensor[i].shape[1])
-        #         # if batched_inputs[i]["image_id"] + "_" + min_width not in self.features:
-        #         if batched_inputs[i]["image_id"] not in self.features:
-        #             features = self.backbone(images.tensor[i].unsqueeze(0))
-        #             # self.features[batched_inputs[i]["image_id"] + "_" + min_width] = features
-        #             self.features[batched_inputs[i]["image_id"]] = features
-        #
-        #     if len(batched_inputs) == 1:
-        #         min_width = str(images.tensor[0].shape[1])
-        #         features = self.features[batched_inputs[0]["image_id"] + "_" + min_width]
-        #         # features = self.features[batched_inputs[0]["image_id"]]
-        #         # print(sorted(self.features.keys()))
-        #     else:
-        #         features = {k: torch.stack([self.features[batched_inputs[0]["image_id"]][k],
-        #                                     self.features[batched_inputs[1]["image_id"]][k]]).squeeze() for k in
-        #                     self.features[batched_inputs[0]["image_id"]].keys()}
-        #     # features = self.features[batched_inputs[0]["image_id"]]
-        # else:
-        #     features = self.backbone(images.tensor)
-
-        min_width = str(images.tensor[0].shape[1])
-
-        name = batched_inputs[0]["image_id"] + "_" + min_width
-
-
-        # height, width = images.tensor[0].shape
-        #
-        # longer_edge = str(max(height, width))
-        #
-        names = list(map(lambda it: it["image_id"] + "_" + min_width, batched_inputs))
-
-        # print(name)
-        if self.freeze2:
+        if self.freeze:
+            image_ids = list(map(lambda it: it["image_id"] + "_", batched_inputs))
+            sizes = str(images.tensor[0].shape[1]) + "_" + str(images.tensor[0].shape[2])
+            names = [image_id + '_' + sizes for image_id in image_ids]
             for idx, name in enumerate(names):
-                if name not in self.saved_images2:
-                    image_tensor = images.tensor[0].unsqueeze(0)
+                if name not in self.saved_images:
+                    image_tensor = images.tensor[idx].unsqueeze(0)
                     features = self.backbone(image_tensor)
-                    #print(images)
-                    #print(gt_instances)
-                    image_size = [images.image_sizes[0]]
+                    image_size = [images.image_sizes[idx]]
                     proposals, proposal_losses = self.proposal_generator(
                         ImageList(image_tensor, image_size), features, [gt_instances[idx]]
                     )
-                    self.saved_images2.add(name)
+                    self.saved_images.add(name)
                     self.roi_heads(
                         ImageList(image_tensor, image_size), features, proposals, [gt_instances[idx]], name
                     )

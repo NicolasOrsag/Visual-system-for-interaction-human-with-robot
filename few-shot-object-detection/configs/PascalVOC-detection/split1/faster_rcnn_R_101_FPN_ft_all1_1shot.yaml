@@ -5,7 +5,7 @@ MODEL:
   RESNETS:
     DEPTH: 101
   ROI_HEADS:
-    NUM_CLASSES: 21
+    NUM_CLASSES: 18
     OUTPUT_LAYER: "CosineSimOutputLayers"
     FREEZE_FEAT: True
   BACKBONE:
@@ -15,7 +15,13 @@ MODEL:
 INPUT:
   MIN_SIZE_TRAIN: (480, 512, 544, 576, 608, 640, 672, 704, 736, 768, 800)
   MIN_SIZE_TEST: 800
-  RANDOM_FLIP: none
+  RANDOM_FLIP: horizontal
+  CROP:
+    ENABLED: true
+    SIZE:
+      - 0.9
+      - 0.9
+    TYPE: relative_range
 DATASETS:
   TRAIN: ('voc_2007_trainval_all1_1shot',)
   TEST: ('voc_2007_test_all1',)
@@ -24,6 +30,6 @@ SOLVER:
   BASE_LR: 0.0000625
   STEPS: (48000,)
   MAX_ITER: 64000
-  CHECKPOINT_PERIOD: 500
+  CHECKPOINT_PERIOD: 100
   WARMUP_ITERS: 0
 OUTPUT_DIR: "checkpoints/voc/faster_rcnn/faster_rcnn_R_101_FPN_ft_normalized_all1_1shot_randnovel"

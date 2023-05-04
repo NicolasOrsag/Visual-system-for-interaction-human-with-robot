@@ -52,7 +52,7 @@ def load_filtered_voc_instances(
         for cls, fileids_ in fileids.items():
             dicts_ = []
             for fileid in fileids_:
-                year = "2012" if "_" in fileid and "r" not in fileid else "2007"
+                year = "2012" if "_" in fileid and "r" not in fileid and "-" not in fileid else "2007"
                 dirname = os.path.join("datasets", "VOC{}".format(year))
                 anno_file = os.path.join(
                     dirname, "Annotations", fileid + ".xml"
