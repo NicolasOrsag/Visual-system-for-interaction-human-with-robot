@@ -148,7 +148,7 @@ Precision = \frac{\text{True positive}}{\text{True positive + False positive}} \
 Recall = \frac{\text{True positive}}{\text{True positive + False negative}} \label{eq:recall}
 \end{equation}
 
-Na určenie, či predikovaný bouning box je dostatočné presný sa používa metrika IoU(intersection over union). Teda plocha prieniku predikcie a anotácie deleno plocha zjednotenia prieniku a anotácie (\ref{eq:IoU}). Podľa hodnoty IoU threshold určujeme, či je predikcia true positive alebo false positive. Ak je IoU >= IoU threshold pri konkrétnej preidikcii je to true positive inak je to false positive. 
+Na určenie, či predikovaný bouning box je dostatočné presný sa používa metrika IoU(intersection over union). Teda plocha prieniku predikcie a anotácie deleno plocha zjednotenia predikcie a anotácie (\ref{eq:IoU}). Podľa hodnoty IoU threshold určujeme, či je predikcia true positive alebo false positive. Ak je IoU >= IoU threshold pri konkrétnej preidikcii je to true positive inak je to false positive. 
 
 \begin{equation}
 IoU = \frac{\text{Area of Overlap}}{\text{Area of Union}} \label{eq:IoU}

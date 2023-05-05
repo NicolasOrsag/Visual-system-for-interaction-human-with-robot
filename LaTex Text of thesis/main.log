@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.12.7)  4 MAY 2023 16:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.12.7)  5 MAY 2023 13:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -499,7 +499,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 52.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<images/logo_fmph.png, id=132, 106.59825pt x 113.58435pt>
+<images/logo_fmph.png, id=136, 106.59825pt x 113.58435pt>
 File: images/logo_fmph.png Graphic file (type png)
 <use images/logo_fmph.png>
 Package pdftex.def Info: images/logo_fmph.png  used on input line 57.
@@ -508,13 +508,13 @@ Package pdftex.def Info: images/logo_fmph.png  used on input line 57.
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images/logo_fmph.png>]
-<images/logo_fmph_dark.png, id=144, 106.59825pt x 113.58435pt>
+<images/logo_fmph_dark.png, id=148, 106.59825pt x 113.58435pt>
 File: images/logo_fmph_dark.png Graphic file (type png)
 <use images/logo_fmph_dark.png>
 Package pdftex.def Info: images/logo_fmph_dark.png  used on input line 87.
 (pdftex.def)             Requested size: 106.59798pt x 113.58406pt.
  [2 <./images/logo_fmph_dark.png>]
-<images/zadaniedp.jpg, id=151, 597.6729pt x 845.0772pt>
+<images/zadaniedp.jpg, id=155, 597.6729pt x 845.0772pt>
 File: images/zadaniedp.jpg Graphic file (type jpg)
 <use images/zadaniedp.jpg>
 Package pdftex.def Info: images/zadaniedp.jpg  used on input line 124.
@@ -564,13 +564,13 @@ Kapitola 1.
 [3
 
 ] [4] [5] [6] [7]
-<images/filter.png, id=285, 4553.01pt x 1707.37875pt>
+<images/filter.png, id=284, 4553.01pt x 1707.37875pt>
 File: images/filter.png Graphic file (type png)
 <use images/filter.png>
 Package pdftex.def Info: images/filter.png  used on input line 59.
 (pdftex.def)             Requested size: 390.0pt x 146.2325pt.
  [8 <./images/filter.png>]
-<images/padding.png, id=294, 298.86656pt x 259.7203pt>
+<images/padding.png, id=293, 298.86656pt x 259.7203pt>
 File: images/padding.png Graphic file (type png)
 <use images/padding.png>
 Package pdftex.def Info: images/padding.png  used on input line 68.
@@ -583,13 +583,13 @@ etre na-²ej siete
  []
 
 [12]
-<images/dropout.png, id=328, 620.3175pt x 337.26pt>
+<images/dropout.png, id=327, 620.3175pt x 337.26pt>
 File: images/dropout.png Graphic file (type png)
 <use images/dropout.png>
 Package pdftex.def Info: images/dropout.png  used on input line 128.
 (pdftex.def)             Requested size: 390.0pt x 212.03749pt.
  [13] [14 <./images/dropout.png>] [15]
-<images/Faster.png, id=354, 1818.795pt x 776.9025pt>
+<images/Faster.png, id=353, 1818.795pt x 776.9025pt>
 File: images/Faster.png Graphic file (type png)
 <use images/Faster.png>
 Package pdftex.def Info: images/Faster.png  used on input line 173.
@@ -606,7 +606,7 @@ File: images/FSFSOD_model.png Graphic file (type png)
 <use images/FSFSOD_model.png>
 Package pdftex.def Info: images/FSFSOD_model.png  used on input line 263.
 (pdftex.def)             Requested size: 390.0pt x 93.27748pt.
-) (./04previous_solutions.tex [23 <./images/FSFSOD_model.png>]
+) (./04testing_fsfsodt.tex [23 <./images/FSFSOD_model.png>]
 Kapitola 2.
 [24
 
@@ -639,119 +639,119 @@ Overfull \hbox (16.62871pt too wide) in paragraph at lines 48--48
  []
 
 [27]
-<images/1_shot_classes_AP50.png, id=463, 607.26875pt x 342.27875pt>
+<images/1_shot_classes_AP50.png, id=464, 607.26875pt x 342.27875pt>
 File: images/1_shot_classes_AP50.png Graphic file (type png)
 <use images/1_shot_classes_AP50.png>
 Package pdftex.def Info: images/1_shot_classes_AP50.png  used on input line 59.
 
 (pdftex.def)             Requested size: 390.0pt x 219.82016pt.
-<images/1_shot_meanAP.png, id=464, 607.26875pt x 342.27875pt>
+<images/1_shot_meanAP.png, id=465, 607.26875pt x 342.27875pt>
 File: images/1_shot_meanAP.png Graphic file (type png)
 <use images/1_shot_meanAP.png>
 Package pdftex.def Info: images/1_shot_meanAP.png  used on input line 66.
 (pdftex.def)             Requested size: 390.0pt x 219.82016pt.
  [28 <./images/1_shot_classes_AP50.png>]
-<images/2_shot_classes_AP50.png, id=477, 607.26875pt x 342.27875pt>
+<images/2_shot_classes_AP50.png, id=478, 607.26875pt x 342.27875pt>
 File: images/2_shot_classes_AP50.png Graphic file (type png)
 <use images/2_shot_classes_AP50.png>
 Package pdftex.def Info: images/2_shot_classes_AP50.png  used on input line 93.
 
 (pdftex.def)             Requested size: 390.0pt x 219.82016pt.
  [29 <./images/1_shot_meanAP.png>]
-<images/2_shot_meanAP.png, id=486, 607.26875pt x 342.27875pt>
+<images/2_shot_meanAP.png, id=487, 607.26875pt x 342.27875pt>
 File: images/2_shot_meanAP.png Graphic file (type png)
 <use images/2_shot_meanAP.png>
 Package pdftex.def Info: images/2_shot_meanAP.png  used on input line 100.
 (pdftex.def)             Requested size: 390.0pt x 219.82016pt.
 
 [30 <./images/2_shot_classes_AP50.png> <./images/2_shot_meanAP.png>]
-<images/3_shot_classes_AP50.png, id=496, 607.26875pt x 342.27875pt>
+<images/3_shot_classes_AP50.png, id=497, 607.26875pt x 342.27875pt>
 File: images/3_shot_classes_AP50.png Graphic file (type png)
 <use images/3_shot_classes_AP50.png>
 Package pdftex.def Info: images/3_shot_classes_AP50.png  used on input line 126
 .
 (pdftex.def)             Requested size: 390.0pt x 219.82016pt.
-<images/3_shot_meanAP.png, id=497, 607.26875pt x 342.27875pt>
+<images/3_shot_meanAP.png, id=498, 607.26875pt x 342.27875pt>
 File: images/3_shot_meanAP.png Graphic file (type png)
 <use images/3_shot_meanAP.png>
 Package pdftex.def Info: images/3_shot_meanAP.png  used on input line 133.
 (pdftex.def)             Requested size: 390.0pt x 219.82016pt.
  [31 <./images/3_shot_classes_AP50.png>]
-<images/5_shot_classes_AP50.png, id=509, 607.26875pt x 342.27875pt>
+<images/5_shot_classes_AP50.png, id=510, 607.26875pt x 342.27875pt>
 File: images/5_shot_classes_AP50.png Graphic file (type png)
 <use images/5_shot_classes_AP50.png>
 Package pdftex.def Info: images/5_shot_classes_AP50.png  used on input line 159
 .
 (pdftex.def)             Requested size: 390.0pt x 219.82016pt.
  [32 <./images/3_shot_meanAP.png>]
-<images/5_shot_meanAP.png, id=518, 607.26875pt x 342.27875pt>
+<images/5_shot_meanAP.png, id=519, 607.26875pt x 342.27875pt>
 File: images/5_shot_meanAP.png Graphic file (type png)
 <use images/5_shot_meanAP.png>
 Package pdftex.def Info: images/5_shot_meanAP.png  used on input line 166.
 (pdftex.def)             Requested size: 390.0pt x 219.82016pt.
  [33 <./images/5_shot_classes_AP50.png> <./images/5_shot_meanAP.png>]
-<images/10_shot_classes_AP50.png, id=528, 607.26875pt x 342.27875pt>
+<images/10_shot_classes_AP50.png, id=529, 607.26875pt x 342.27875pt>
 File: images/10_shot_classes_AP50.png Graphic file (type png)
 <use images/10_shot_classes_AP50.png>
 Package pdftex.def Info: images/10_shot_classes_AP50.png  used on input line 19
 2.
 (pdftex.def)             Requested size: 390.0pt x 219.82016pt.
-<images/10_shot_meanAP.png, id=529, 607.26875pt x 342.27875pt>
+<images/10_shot_meanAP.png, id=530, 607.26875pt x 342.27875pt>
 File: images/10_shot_meanAP.png Graphic file (type png)
 <use images/10_shot_meanAP.png>
 Package pdftex.def Info: images/10_shot_meanAP.png  used on input line 199.
 (pdftex.def)             Requested size: 390.0pt x 219.82016pt.
  [34 <./images/10_shot_classes_AP50.png>]
-<images/15_shot_classes_AP50.png, id=542, 607.26875pt x 342.27875pt>
+<images/15_shot_classes_AP50.png, id=543, 607.26875pt x 342.27875pt>
 File: images/15_shot_classes_AP50.png Graphic file (type png)
 <use images/15_shot_classes_AP50.png>
 Package pdftex.def Info: images/15_shot_classes_AP50.png  used on input line 22
 6.
 (pdftex.def)             Requested size: 390.0pt x 219.82016pt.
  [35 <./images/10_shot_meanAP.png>]
-<images/15_shot_meanAP.png, id=551, 607.26875pt x 342.27875pt>
+<images/15_shot_meanAP.png, id=552, 607.26875pt x 342.27875pt>
 File: images/15_shot_meanAP.png Graphic file (type png)
 <use images/15_shot_meanAP.png>
 Package pdftex.def Info: images/15_shot_meanAP.png  used on input line 233.
 (pdftex.def)             Requested size: 390.0pt x 219.82016pt.
  [36 <./images/15_shot_classes_AP50.png> <./images/15_shot_meanAP.png>]
-<images/results_novel_AP50.png, id=558, 607.26875pt x 342.27875pt>
+<images/results_novel_AP50.png, id=559, 607.26875pt x 342.27875pt>
 File: images/results_novel_AP50.png Graphic file (type png)
 <use images/results_novel_AP50.png>
 Package pdftex.def Info: images/results_novel_AP50.png  used on input line 259.
 
 (pdftex.def)             Requested size: 390.0pt x 219.82016pt.
-<images/results_time.png, id=560, 607.26875pt x 342.27875pt>
+<images/results_time.png, id=561, 607.26875pt x 342.27875pt>
 File: images/results_time.png Graphic file (type png)
 <use images/results_time.png>
 Package pdftex.def Info: images/results_time.png  used on input line 268.
 (pdftex.def)             Requested size: 390.0pt x 219.82016pt.
  [37 <./images/results_novel_AP50.png>]
-<images/results_lowest_AP50.png, id=568, 607.26875pt x 342.27875pt>
+<images/results_lowest_AP50.png, id=569, 607.26875pt x 342.27875pt>
 File: images/results_lowest_AP50.png Graphic file (type png)
 <use images/results_lowest_AP50.png>
 Package pdftex.def Info: images/results_lowest_AP50.png  used on input line 277
 .
 (pdftex.def)             Requested size: 390.0pt x 219.82016pt.
- [38 <./images/results_time.png>]) (./05proposal.tex [39 <./images/results_lowe
-st_AP50.png>]
+ [38 <./images/results_time.png>]) (./05making_algorithm_faster.tex [39 <./imag
+es/results_lowest_AP50.png>]
 Kapitola 3.
 [40
 
 ]
-<images/1_shot_training_curve.png, id=590, 607.26875pt x 342.27875pt>
+<images/1_shot_training_curve.png, id=591, 607.26875pt x 342.27875pt>
 File: images/1_shot_training_curve.png Graphic file (type png)
 <use images/1_shot_training_curve.png>
 Package pdftex.def Info: images/1_shot_training_curve.png  used on input line 1
 2.
 (pdftex.def)             Requested size: 390.0pt x 219.82016pt.
-<images/chart_compare_5min.png, id=591, 607.26875pt x 342.27875pt>
+<images/chart_compare_5min.png, id=592, 607.26875pt x 342.27875pt>
 File: images/chart_compare_5min.png Graphic file (type png)
 <use images/chart_compare_5min.png>
 Package pdftex.def Info: images/chart_compare_5min.png  used on input line 37.
 (pdftex.def)             Requested size: 390.0pt x 219.82016pt.
  [41 <./images/1_shot_training_curve.png>]
-<images/chart_compare_20min.png, id=601, 607.26875pt x 342.27875pt>
+<images/chart_compare_20min.png, id=602, 607.26875pt x 342.27875pt>
 File: images/chart_compare_20min.png Graphic file (type png)
 <use images/chart_compare_20min.png>
 Package pdftex.def Info: images/chart_compare_20min.png  used on input line 61.
@@ -763,53 +763,53 @@ Overfull \hbox (8.5405pt too wide) in paragraph at lines 69--69
  []
 
 [43 <./images/chart_compare_20min.png>] [44] [45]
-<images/same_size_compare_graph.png, id=629, 607.26875pt x 342.27875pt>
+<images/same_size_compare_graph.png, id=630, 607.26875pt x 342.27875pt>
 File: images/same_size_compare_graph.png Graphic file (type png)
 <use images/same_size_compare_graph.png>
 Package pdftex.def Info: images/same_size_compare_graph.png  used on input line
  117.
 (pdftex.def)             Requested size: 390.0pt x 219.82016pt.
  [46 <./images/same_size_compare_graph.png>]
-<images/batch_size_comparison.png, id=640, 607.26875pt x 342.27875pt>
+<images/batch_size_comparison.png, id=641, 607.26875pt x 342.27875pt>
 File: images/batch_size_comparison.png Graphic file (type png)
 <use images/batch_size_comparison.png>
 Package pdftex.def Info: images/batch_size_comparison.png  used on input line 1
 32.
 (pdftex.def)             Requested size: 390.0pt x 219.82016pt.
  [47 <./images/batch_size_comparison.png>] [48]
-<images/faster_1attempt_chart.png, id=657, 607.26875pt x 342.27875pt>
+<images/faster_1attempt_chart.png, id=658, 607.26875pt x 342.27875pt>
 File: images/faster_1attempt_chart.png Graphic file (type png)
 <use images/faster_1attempt_chart.png>
 Package pdftex.def Info: images/faster_1attempt_chart.png  used on input line 1
 66.
 (pdftex.def)             Requested size: 390.0pt x 219.82016pt.
  [49 <./images/faster_1attempt_chart.png>]
-<images/faster_3attempt_chart.png, id=667, 607.26875pt x 342.27875pt>
+<images/faster_3attempt_chart.png, id=668, 607.26875pt x 342.27875pt>
 File: images/faster_3attempt_chart.png Graphic file (type png)
 <use images/faster_3attempt_chart.png>
 Package pdftex.def Info: images/faster_3attempt_chart.png  used on input line 1
 91.
 (pdftex.def)             Requested size: 390.0pt x 219.82016pt.
  [50 <./images/faster_3attempt_chart.png>]
-<images/fastest_chart.png, id=675, 607.26875pt x 342.27875pt>
+<images/fastest_chart.png, id=676, 607.26875pt x 342.27875pt>
 File: images/fastest_chart.png Graphic file (type png)
 <use images/fastest_chart.png>
 Package pdftex.def Info: images/fastest_chart.png  used on input line 217.
 (pdftex.def)             Requested size: 390.0pt x 219.82016pt.
  [51 <./images/fastest_chart.png>]
-<images/diff_batch_size.png, id=685, 607.26875pt x 342.27875pt>
+<images/diff_batch_size.png, id=686, 607.26875pt x 342.27875pt>
 File: images/diff_batch_size.png Graphic file (type png)
 <use images/diff_batch_size.png>
 Package pdftex.def Info: images/diff_batch_size.png  used on input line 234.
 (pdftex.def)             Requested size: 390.0pt x 219.82016pt.
  [52]
-<images/speed_compare.png, id=693, 607.26875pt x 342.27875pt>
+<images/speed_compare.png, id=694, 607.26875pt x 342.27875pt>
 File: images/speed_compare.png Graphic file (type png)
 <use images/speed_compare.png>
 Package pdftex.def Info: images/speed_compare.png  used on input line 246.
 (pdftex.def)             Requested size: 390.0pt x 219.82016pt.
  [53 <./images/diff_batch_size.png>])
-(./06implementation.tex [54 <./images/speed_compare.png>]
+(./06testing_more_classes.tex [54 <./images/speed_compare.png>]
 Kapitola 4.
 
 Overfull \hbox (22.75471pt too wide) in paragraph at lines 11--12
@@ -827,7 +827,7 @@ mr/m/n/12 a ob-rázky do \T1/cmtt/m/n/12 datasets/VOC2007/JPEGImages\T1/cmr/m/n/
 [55
 
 ]
-<images/zebra_example_annotations.png, id=715, 1057.9525pt x 466.74374pt>
+<images/zebra_example_annotations.png, id=716, 1057.9525pt x 466.74374pt>
 File: images/zebra_example_annotations.png Graphic file (type png)
 <use images/zebra_example_annotations.png>
 Package pdftex.def Info: images/zebra_example_annotations.png  used on input li
@@ -840,13 +840,13 @@ Overfull \hbox (13.62625pt too wide) has occurred while \output is active
  []
 
 [56]
-<images/orange_example_annotations.png, id=724, 1057.9525pt x 466.74374pt>
+<images/orange_example_annotations.png, id=725, 1057.9525pt x 466.74374pt>
 File: images/orange_example_annotations.png Graphic file (type png)
 <use images/orange_example_annotations.png>
 Package pdftex.def Info: images/orange_example_annotations.png  used on input l
 ine 32.
 (pdftex.def)             Requested size: 390.0pt x 172.05862pt.
-<images/truck_example_annotations.png, id=725, 1057.9525pt x 466.74374pt>
+<images/truck_example_annotations.png, id=726, 1057.9525pt x 466.74374pt>
 File: images/truck_example_annotations.png Graphic file (type png)
 <use images/truck_example_annotations.png>
 Package pdftex.def Info: images/truck_example_annotations.png  used on input li
@@ -860,13 +860,13 @@ Overfull \hbox (13.62625pt too wide) has occurred while \output is active
 
 [57 <./images/zebra_example_annotations.png> <./images/orange_example_annotatio
 ns.png>]
-<images/bear_example_annotations.png, id=733, 1057.9525pt x 466.74374pt>
+<images/bear_example_annotations.png, id=734, 1057.9525pt x 466.74374pt>
 File: images/bear_example_annotations.png Graphic file (type png)
 <use images/bear_example_annotations.png>
 Package pdftex.def Info: images/bear_example_annotations.png  used on input lin
 e 46.
 (pdftex.def)             Requested size: 390.0pt x 172.05862pt.
-<images/10novel_chart.png, id=735, 607.26875pt x 342.27875pt>
+<images/10novel_chart.png, id=736, 607.26875pt x 342.27875pt>
 File: images/10novel_chart.png Graphic file (type png)
 <use images/10novel_chart.png>
 Package pdftex.def Info: images/10novel_chart.png  used on input line 55.
@@ -879,7 +879,7 @@ Overfull \hbox (13.62625pt too wide) has occurred while \output is active
 
 [58 <./images/truck_example_annotations.png> <./images/bear_example_annotations
 .png>]
-<images/10novel_classes_chart.png, id=745, 607.26875pt x 342.27875pt>
+<images/10novel_classes_chart.png, id=746, 607.26875pt x 342.27875pt>
 File: images/10novel_classes_chart.png Graphic file (type png)
 <use images/10novel_classes_chart.png>
 Package pdftex.def Info: images/10novel_classes_chart.png  used on input line 6
@@ -892,13 +892,13 @@ Overfull \hbox (13.62625pt too wide) has occurred while \output is active
  []
 
 [59 <./images/10novel_chart.png> <./images/10novel_classes_chart.png>]
-<images/giraffe_example_annotations.png, id=755, 1057.9525pt x 466.74374pt>
+<images/giraffe_example_annotations.png, id=756, 1057.9525pt x 466.74374pt>
 File: images/giraffe_example_annotations.png Graphic file (type png)
 <use images/giraffe_example_annotations.png>
 Package pdftex.def Info: images/giraffe_example_annotations.png  used on input 
 line 88.
 (pdftex.def)             Requested size: 390.0pt x 172.05862pt.
-<images/umbrella_example_annotations.png, id=756, 1057.9525pt x 466.74374pt>
+<images/umbrella_example_annotations.png, id=757, 1057.9525pt x 466.74374pt>
 File: images/umbrella_example_annotations.png Graphic file (type png)
 <use images/umbrella_example_annotations.png>
 Package pdftex.def Info: images/umbrella_example_annotations.png  used on input
@@ -911,13 +911,13 @@ Overfull \hbox (13.62625pt too wide) has occurred while \output is active
  []
 
 [60 <./images/giraffe_example_annotations.png>]
-<images/football_example_annotations.png, id=766, 1057.9525pt x 466.74374pt>
+<images/football_example_annotations.png, id=767, 1057.9525pt x 466.74374pt>
 File: images/football_example_annotations.png Graphic file (type png)
 <use images/football_example_annotations.png>
 Package pdftex.def Info: images/football_example_annotations.png  used on input
  line 102.
 (pdftex.def)             Requested size: 390.0pt x 172.05862pt.
-<images/bat_example_annotations.png, id=767, 1057.9525pt x 466.74374pt>
+<images/bat_example_annotations.png, id=768, 1057.9525pt x 466.74374pt>
 File: images/bat_example_annotations.png Graphic file (type png)
 <use images/bat_example_annotations.png>
 Package pdftex.def Info: images/bat_example_annotations.png  used on input line
@@ -931,13 +931,13 @@ Overfull \hbox (13.62625pt too wide) has occurred while \output is active
 
 [61 <./images/umbrella_example_annotations.png> <./images/football_example_anno
 tations.png>]
-<images/fork_example_annotations.png, id=776, 1038.88126pt x 407.5225pt>
+<images/fork_example_annotations.png, id=777, 1038.88126pt x 407.5225pt>
 File: images/fork_example_annotations.png Graphic file (type png)
 <use images/fork_example_annotations.png>
 Package pdftex.def Info: images/fork_example_annotations.png  used on input lin
 e 116.
 (pdftex.def)             Requested size: 390.0pt x 152.98222pt.
-<images/15novel_chart.png, id=780, 607.26875pt x 342.27875pt>
+<images/15novel_chart.png, id=781, 607.26875pt x 342.27875pt>
 File: images/15novel_chart.png Graphic file (type png)
 <use images/15novel_chart.png>
 Package pdftex.def Info: images/15novel_chart.png  used on input line 125.
@@ -950,7 +950,7 @@ Overfull \hbox (13.62625pt too wide) has occurred while \output is active
 
 [62 <./images/bat_example_annotations.png> <./images/fork_example_annotations.p
 ng>]
-<images/15novel_classes_chart.png, id=791, 608.2725pt x 424.58624pt>
+<images/15novel_classes_chart.png, id=792, 608.2725pt x 424.58624pt>
 File: images/15novel_classes_chart.png Graphic file (type png)
 <use images/15novel_classes_chart.png>
 Package pdftex.def Info: images/15novel_classes_chart.png  used on input line 1
@@ -963,13 +963,13 @@ Overfull \hbox (13.62625pt too wide) has occurred while \output is active
  []
 
 [63 <./images/15novel_chart.png> <./images/15novel_classes_chart.png>]
-<images/knife_example_annotations.png, id=800, 1057.9525pt x 466.74374pt>
+<images/knife_example_annotations.png, id=801, 1057.9525pt x 466.74374pt>
 File: images/knife_example_annotations.png Graphic file (type png)
 <use images/knife_example_annotations.png>
 Package pdftex.def Info: images/knife_example_annotations.png  used on input li
 ne 158.
 (pdftex.def)             Requested size: 390.0pt x 172.05862pt.
-<images/banana_example_annotations.png, id=801, 1057.9525pt x 466.74374pt>
+<images/banana_example_annotations.png, id=802, 1057.9525pt x 466.74374pt>
 File: images/banana_example_annotations.png Graphic file (type png)
 <use images/banana_example_annotations.png>
 Package pdftex.def Info: images/banana_example_annotations.png  used on input l
@@ -982,13 +982,13 @@ Overfull \hbox (13.62625pt too wide) has occurred while \output is active
  []
 
 [64 <./images/knife_example_annotations.png>]
-<images/carrot_example_annotations.png, id=811, 1057.9525pt x 466.74374pt>
+<images/carrot_example_annotations.png, id=812, 1057.9525pt x 466.74374pt>
 File: images/carrot_example_annotations.png Graphic file (type png)
 <use images/carrot_example_annotations.png>
 Package pdftex.def Info: images/carrot_example_annotations.png  used on input l
 ine 172.
 (pdftex.def)             Requested size: 390.0pt x 172.05862pt.
-<images/hotdog_example_annotations.png, id=812, 1057.9525pt x 466.74374pt>
+<images/hotdog_example_annotations.png, id=813, 1057.9525pt x 466.74374pt>
 File: images/hotdog_example_annotations.png Graphic file (type png)
 <use images/hotdog_example_annotations.png>
 Package pdftex.def Info: images/hotdog_example_annotations.png  used on input l
@@ -1002,14 +1002,14 @@ Overfull \hbox (13.62625pt too wide) has occurred while \output is active
 
 [65 <./images/banana_example_annotations.png> <./images/carrot_example_annotati
 ons.png>]
-<images/computer_mouse_example_annotations.png, id=821, 1057.9525pt x 466.74374
+<images/computer_mouse_example_annotations.png, id=822, 1057.9525pt x 466.74374
 pt>
 File: images/computer_mouse_example_annotations.png Graphic file (type png)
 <use images/computer_mouse_example_annotations.png>
 Package pdftex.def Info: images/computer_mouse_example_annotations.png  used on
  input line 186.
 (pdftex.def)             Requested size: 390.0pt x 172.05862pt.
-<images/20novel_chart.png, id=825, 607.26875pt x 342.27875pt>
+<images/20novel_chart.png, id=826, 607.26875pt x 342.27875pt>
 File: images/20novel_chart.png Graphic file (type png)
 <use images/20novel_chart.png>
 Package pdftex.def Info: images/20novel_chart.png  used on input line 195.
@@ -1022,7 +1022,7 @@ Overfull \hbox (13.62625pt too wide) has occurred while \output is active
 
 [66 <./images/hotdog_example_annotations.png> <./images/computer_mouse_example_
 annotations.png>]
-<images/20novel_classes_chart.png, id=836, 608.2725pt x 510.90875pt>
+<images/20novel_classes_chart.png, id=837, 608.2725pt x 510.90875pt>
 File: images/20novel_classes_chart.png Graphic file (type png)
 <use images/20novel_classes_chart.png>
 Package pdftex.def Info: images/20novel_classes_chart.png  used on input line 2
@@ -1035,7 +1035,7 @@ Overfull \hbox (13.62625pt too wide) has occurred while \output is active
  []
 
 [67 <./images/20novel_chart.png>]
-<images/compare_20novel.png, id=842, 607.26875pt x 342.27875pt>
+<images/compare_20novel.png, id=843, 607.26875pt x 342.27875pt>
 File: images/compare_20novel.png Graphic file (type png)
 <use images/compare_20novel.png>
 Package pdftex.def Info: images/compare_20novel.png  used on input line 226.
@@ -1047,7 +1047,7 @@ Overfull \hbox (13.62625pt too wide) has occurred while \output is active
  []
 
 [68 <./images/20novel_classes_chart.png>]
-<images/more_novel_results.png, id=849, 607.26875pt x 342.27875pt>
+<images/more_novel_results.png, id=850, 607.26875pt x 342.27875pt>
 File: images/more_novel_results.png Graphic file (type png)
 <use images/more_novel_results.png>
 Package pdftex.def Info: images/more_novel_results.png  used on input line 237.
@@ -1060,7 +1060,7 @@ Overfull \hbox (13.62625pt too wide) has occurred while \output is active
  []
 
 [69 <./images/compare_20novel.png>]
-<images/only_novel_compare_chart.png, id=857, 607.26875pt x 342.27875pt>
+<images/only_novel_compare_chart.png, id=858, 607.26875pt x 342.27875pt>
 File: images/only_novel_compare_chart.png Graphic file (type png)
 <use images/only_novel_compare_chart.png>
 Package pdftex.def Info: images/only_novel_compare_chart.png  used on input lin
@@ -1072,7 +1072,7 @@ Overfull \hbox (13.62625pt too wide) has occurred while \output is active
 /m/n/12 70
  []
 
-[70 <./images/more_novel_results.png>]) (./07results.tex
+[70 <./images/more_novel_results.png>]) (./07testing_on_NICO.tex
 Overfull \hbox (13.62625pt too wide) has occurred while \output is active
 \T1/cmr/m/sl/12 KAPITOLA 4.  TESTOVANIE ALGORITMU PRI ZMENE POƒTU TRIED \T1/cmr
 /m/n/12 71
@@ -1083,13 +1083,13 @@ Kapitola 5.
 [72
 
 ]
-<images/2023-04-17-140320_1.jpg, id=887, 4223.78pt x 3131.7pt>
+<images/2023-04-17-140320_1.jpg, id=885, 4223.78pt x 3131.7pt>
 File: images/2023-04-17-140320_1.jpg Graphic file (type jpg)
 <use images/2023-04-17-140320_1.jpg>
 Package pdftex.def Info: images/2023-04-17-140320_1.jpg  used on input line 14.
 
 (pdftex.def)             Requested size: 390.0pt x 289.15207pt.
-<images/2023-04-17-140935_99.jpg, id=888, 4223.78pt x 3131.7pt>
+<images/2023-04-17-140935_99.jpg, id=886, 4223.78pt x 3131.7pt>
 File: images/2023-04-17-140935_99.jpg Graphic file (type jpg)
 <use images/2023-04-17-140935_99.jpg>
 Package pdftex.def Info: images/2023-04-17-140935_99.jpg  used on input line 15
@@ -1111,13 +1111,13 @@ OMOCOU KAMERY ROBOTA NICO \T1/cmr/m/n/12 74
  []
 
 [74 <./images/2023-04-17-140320_1.jpg> <./images/2023-04-17-140935_99.jpg>]
-<images/detections_screenshot1.png, id=902, 1076.52188pt x 797.98125pt>
+<images/detections_screenshot1.png, id=899, 1076.52188pt x 797.98125pt>
 File: images/detections_screenshot1.png Graphic file (type png)
 <use images/detections_screenshot1.png>
 Package pdftex.def Info: images/detections_screenshot1.png  used on input line 
 22.
 (pdftex.def)             Requested size: 390.0pt x 289.08728pt.
-<images/detections_screenshot2.png, id=903, 1076.52188pt x 797.98125pt>
+<images/detections_screenshot2.png, id=900, 1076.52188pt x 797.98125pt>
 File: images/detections_screenshot2.png Graphic file (type png)
 <use images/detections_screenshot2.png>
 Package pdftex.def Info: images/detections_screenshot2.png  used on input line 
@@ -1134,13 +1134,13 @@ OMOCOU KAMERY ROBOTA NICO \T1/cmr/m/n/12 75
 
 [75 <./images/detections_screenshot1.png (PNG copy)> <./images/detections_scree
 nshot2.png (PNG copy)>]
-<images/2023-04-17-140935_8.jpg, id=908, 4223.78pt x 3131.7pt>
+<images/2023-04-17-140935_8.jpg, id=905, 4223.78pt x 3131.7pt>
 File: images/2023-04-17-140935_8.jpg Graphic file (type jpg)
 <use images/2023-04-17-140935_8.jpg>
 Package pdftex.def Info: images/2023-04-17-140935_8.jpg  used on input line 30.
 
 (pdftex.def)             Requested size: 390.0pt x 289.15207pt.
-<images/2023-04-17-140334_38.jpg, id=909, 4223.78pt x 3131.7pt>
+<images/2023-04-17-140334_38.jpg, id=906, 4223.78pt x 3131.7pt>
 File: images/2023-04-17-140334_38.jpg Graphic file (type jpg)
 <use images/2023-04-17-140334_38.jpg>
 Package pdftex.def Info: images/2023-04-17-140334_38.jpg  used on input line 31
@@ -1156,24 +1156,17 @@ OMOCOU KAMERY ROBOTA NICO \T1/cmr/m/n/12 76
  []
 
 [76 <./images/2023-04-17-140935_8.jpg> <./images/2023-04-17-140334_38.jpg>]
-Overfull \hbox (17.10449pt too wide) in paragraph at lines 51--59
+Overfull \hbox (17.10449pt too wide) in paragraph at lines 53--61
  [][] 
  []
 
-
-Overfull \hbox (275.41954pt too wide) has occurred while \output is active
-\T1/cmr/m/sl/12 KAPITOLA 5.  TESTOVANIE TRÉNINGU MODELU PRE DETEKCIU OBJEKTOV P
-OMOCOU KAMERY ROBOTA NICO \T1/cmr/m/n/12 77
- []
-
-[77]
-<images/2023-04-17-140334_41_clean.jpg, id=931, 4223.78pt x 3131.7pt>
+<images/2023-04-17-140334_41_clean.jpg, id=918, 4223.78pt x 3131.7pt>
 File: images/2023-04-17-140334_41_clean.jpg Graphic file (type jpg)
 <use images/2023-04-17-140334_41_clean.jpg>
 Package pdftex.def Info: images/2023-04-17-140334_41_clean.jpg  used on input l
 ine 72.
 (pdftex.def)             Requested size: 390.0pt x 289.15207pt.
-<images/2023-04-17-140935_2_clean.jpg, id=932, 4223.78pt x 3131.7pt>
+<images/2023-04-17-140935_2_clean.jpg, id=919, 4223.78pt x 3131.7pt>
 File: images/2023-04-17-140935_2_clean.jpg Graphic file (type jpg)
 <use images/2023-04-17-140935_2_clean.jpg>
 Package pdftex.def Info: images/2023-04-17-140935_2_clean.jpg  used on input li
@@ -1182,27 +1175,27 @@ ne 73.
 
 Overfull \hbox (275.41954pt too wide) has occurred while \output is active
 \T1/cmr/m/sl/12 KAPITOLA 5.  TESTOVANIE TRÉNINGU MODELU PRE DETEKCIU OBJEKTOV P
-OMOCOU KAMERY ROBOTA NICO \T1/cmr/m/n/12 78
+OMOCOU KAMERY ROBOTA NICO \T1/cmr/m/n/12 77
  []
 
-[78]
+[77]
 Overfull \vbox (26.30412pt too high) has occurred while \output is active []
 
 
 Overfull \hbox (275.41954pt too wide) has occurred while \output is active
 \T1/cmr/m/sl/12 KAPITOLA 5.  TESTOVANIE TRÉNINGU MODELU PRE DETEKCIU OBJEKTOV P
-OMOCOU KAMERY ROBOTA NICO \T1/cmr/m/n/12 79
+OMOCOU KAMERY ROBOTA NICO \T1/cmr/m/n/12 78
  []
 
-[79 <./images/2023-04-17-140334_41_clean.jpg> <./images/2023-04-17-140935_2_cle
+[78 <./images/2023-04-17-140334_41_clean.jpg> <./images/2023-04-17-140935_2_cle
 an.jpg>]
-<images/detections_screenshot_clean1.png, id=941, 994.46532pt x 737.75626pt>
+<images/detections_screenshot_clean1.png, id=934, 994.46532pt x 737.75626pt>
 File: images/detections_screenshot_clean1.png Graphic file (type png)
 <use images/detections_screenshot_clean1.png>
 Package pdftex.def Info: images/detections_screenshot_clean1.png  used on input
  line 80.
 (pdftex.def)             Requested size: 390.0pt x 289.33357pt.
-<images/detections_screenshot_clean2.png, id=942, 994.46532pt x 737.75626pt>
+<images/detections_screenshot_clean2.png, id=935, 994.46532pt x 737.75626pt>
 File: images/detections_screenshot_clean2.png Graphic file (type png)
 <use images/detections_screenshot_clean2.png>
 Package pdftex.def Info: images/detections_screenshot_clean2.png  used on input
@@ -1214,19 +1207,19 @@ Overfull \vbox (26.66713pt too high) has occurred while \output is active []
 
 Overfull \hbox (275.41954pt too wide) has occurred while \output is active
 \T1/cmr/m/sl/12 KAPITOLA 5.  TESTOVANIE TRÉNINGU MODELU PRE DETEKCIU OBJEKTOV P
-OMOCOU KAMERY ROBOTA NICO \T1/cmr/m/n/12 80
+OMOCOU KAMERY ROBOTA NICO \T1/cmr/m/n/12 79
  []
 
-[80 <./images/detections_screenshot_clean1.png (PNG copy)> <./images/detections
+[79 <./images/detections_screenshot_clean1.png (PNG copy)> <./images/detections
 _screenshot_clean2.png (PNG copy)>]
-<images/detections_screenshot_clean_wrong1.png, id=947, 994.46532pt x 737.75626
+<images/detections_screenshot_clean_wrong1.png, id=940, 994.46532pt x 737.75626
 pt>
 File: images/detections_screenshot_clean_wrong1.png Graphic file (type png)
 <use images/detections_screenshot_clean_wrong1.png>
 Package pdftex.def Info: images/detections_screenshot_clean_wrong1.png  used on
  input line 88.
 (pdftex.def)             Requested size: 390.0pt x 289.33357pt.
-<images/detections_screenshot_clean_wrong2.png, id=948, 799.48688pt x 593.21625
+<images/detections_screenshot_clean_wrong2.png, id=941, 799.48688pt x 593.21625
 pt>
 File: images/detections_screenshot_clean_wrong2.png Graphic file (type png)
 <use images/detections_screenshot_clean_wrong2.png>
@@ -1239,49 +1232,45 @@ Overfull \vbox (26.71767pt too high) has occurred while \output is active []
 
 Overfull \hbox (275.41954pt too wide) has occurred while \output is active
 \T1/cmr/m/sl/12 KAPITOLA 5.  TESTOVANIE TRÉNINGU MODELU PRE DETEKCIU OBJEKTOV P
-OMOCOU KAMERY ROBOTA NICO \T1/cmr/m/n/12 81
+OMOCOU KAMERY ROBOTA NICO \T1/cmr/m/n/12 80
  []
 
-[81 <./images/detections_screenshot_clean_wrong1.png (PNG copy)> <./images/dete
+[80 <./images/detections_screenshot_clean_wrong1.png (PNG copy)> <./images/dete
 ctions_screenshot_clean_wrong2.png (PNG copy)>]
-Overfull \hbox (17.10449pt too wide) in paragraph at lines 109--117
+Overfull \hbox (17.10449pt too wide) in paragraph at lines 113--121
  [][] 
  []
 
-) (./09discusion.tex
+) (./08discusion.tex
 Overfull \hbox (275.41954pt too wide) has occurred while \output is active
 \T1/cmr/m/sl/12 KAPITOLA 5.  TESTOVANIE TRÉNINGU MODELU PRE DETEKCIU OBJEKTOV P
-OMOCOU KAMERY ROBOTA NICO \T1/cmr/m/n/12 82
+OMOCOU KAMERY ROBOTA NICO \T1/cmr/m/n/12 81
  []
 
-[82] [83
+[81]
+Kapitola 6.
+[82
 
-]) (./08conclusion.tex
-Overfull \hbox (275.41954pt too wide) has occurred while \output is active
-\T1/cmr/m/sl/12 KAPITOLA 5.  TESTOVANIE TRÉNINGU MODELU PRE DETEKCIU OBJEKTOV P
-OMOCOU KAMERY ROBOTA NICO \T1/cmr/m/n/12 84
- []
+]) (./09conclusion.tex [83]) [84
 
-[84]) [85
-
-] (./main.bbl [86
+] (./main.bbl [85
 
 
 ]
-Underfull \hbox (badness 1565) in paragraph at lines 77--80
+Underfull \hbox (badness 1565) in paragraph at lines 66--69
 []\T1/cmr/m/n/12 Karen Si-mo-nyan and An-drew Zis-ser-man.  Very deep con-vo-lu
 -ti-
  []
 
-[87] [88]) [89] (./main.lof [90
+[86] [87]) [88] (./main.lof [89
 
-] [91]
+] [90]
 Overfull \hbox (7.54034pt too wide) in paragraph at lines 35--35
  [][] [][]\T1/cmr/m/n/12 Porovnanie rých-lostí pô-vod-ného al-go-ritmu a al-go-
 ritmu po zrých- 
  []
 
-[92]
+[91]
 Overfull \hbox (3.3484pt too wide) in paragraph at lines 59--59
  [][] [][]\T1/cmr/m/n/12 Graf po-rov-na-nia pres-nosti na tes-to-va-cích dá-tac
 h pre fine-tuning 
@@ -1291,18 +1280,18 @@ h pre fine-tuning
 \tf@lof=\write5
 \openout5 = `main.lof'.
 
- [93] (./main.aux)
+ [92] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 7C53AE115BFBA3A34A5B8406AEDD2416;6629.
+(rerunfilecheck)             Checksum: BF8F458B85507C4C3FF74105FE9C6527;6718.
  ) 
 Here is how much of TeX's memory you used:
  15403 strings out of 478287
- 250724 string characters out of 5849289
- 540143 words of memory out of 5000000
- 32989 multiletter control sequences out of 15000+600000
+ 250803 string characters out of 5849289
+ 540136 words of memory out of 5000000
+ 32990 multiletter control sequences out of 15000+600000
  483763 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,8n,76p,1808b,531s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 70i,8n,76p,1391b,531s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/nicolas/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1200.6
 00pk> </home/nicolas/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm120
 0.600pk> </home/nicolas/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt
@@ -1318,10 +1307,10 @@ ts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (102 pages, 33008484 bytes).
+Output written on main.pdf (101 pages, 33009680 bytes).
 PDF statistics:
  1698 PDF objects out of 1728 (max. 8388607)
- 980 compressed objects within 10 object streams
- 298 named destinations out of 1000 (max. 500000)
- 602 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 977 compressed objects within 10 object streams
+ 297 named destinations out of 1000 (max. 500000)
+ 610 words of extra memory for PDF output out of 10000 (max. 10000000)
 

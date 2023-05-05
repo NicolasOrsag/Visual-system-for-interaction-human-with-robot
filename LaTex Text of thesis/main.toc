@@ -58,3 +58,4 @@
 \contentsline {chapter}{\numberline {5}Testovanie tréningu modelu pre detekciu objektov pomocou kamery robota NICO}{72}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Testovanie na pôvodných snímkoch z kamery}{72}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Testovanie na snímkoch z kamery zbavených skreslenia}{77}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Discusion}{82}{chapter.6}%
